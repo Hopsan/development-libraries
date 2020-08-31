@@ -44,7 +44,7 @@ class BankHeadingSideslipIndicator : public ComponentSignal
 
 private:
 
-    double *mpPsi, *mpPhi, *mpbeta;
+    double *mpPsi, *mpPhi, *mpbeta,*mpLGUp;
     
 public:
     static Component *Creator()
@@ -58,7 +58,7 @@ public:
         addInputVariable("Psi", "Heading angle", "rad", 0.0, &mpPsi);
         addInputVariable("Phi", "Bank angle", "rad", 0.0, &mpPhi);
         addInputVariable("beta","Sideslip angle", "rad", 0.0, &mpbeta);
-        
+        addInputVariable("LandingGearUp", "Landing gear up", "-", 1, &mpLGUp);
 
     }
 

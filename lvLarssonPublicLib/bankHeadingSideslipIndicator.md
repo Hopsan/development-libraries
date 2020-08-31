@@ -1,24 +1,18 @@
-![Indicator ](attitudeIndicator_help.svg)
+![Indicator image](bankHeadingSideslipIndicator_help.svg)
 
-Visualisation component of an attitude indicator instrument. The component reads the simulated angles from an aircraft model and animates the indicator accordingly during animation.
+Visualisation component for bank, heading and sideslip angles. The component reads the simulated angles from an aircraft model and animates the indicator accordingly during animation.
 
+Note that the aircraft is viewed from behind (facing away from the user).
 
 ### Component type
 Signal/Animation
 
 ### Input Variables
-* **Phi** - Bank angle [rad]
-* **Theta** - Pitch angle [rad]
 * **Psi** - Heading angle [rad]
-* **Alpha** - Angle of attack [rad]
-* **AlphaMax** - Maximum angle of attack (used to change the range of the Aoa indicator) [rad]
-* **Beta** - Sideslip angle [rad]
-* **BetaMax** - Maximum sideslip angle (used to change the range of the beta indicator) [rad]
+* **phi** - Bank angle [rad]
+* **beta** - Sideslip angle [rad]
+* **LandingGearUp** - Landing gear up (1) or down (0) [-]
 
-Note that the range for **Theta** is non-linear, i.e. horizon moves twice as fast for abs(**Theta**)>40 degrees.
-
-### Todos
-* Add landing gear
-* add Control surfaces (?)
+Note: **LandingGearUp** may be used to linearly move the landing gear between fully up (1, default) or fully down (0).
 
 <!---EQUATION --->

@@ -11,7 +11,8 @@
         <ports>
             <port name="Psi"       x="0.1" y="0" a="270"/>
             <port name="Phi"       x="0.2"  y="0" a="270"/>
-            <port name="beta"      x="0.3" y="0" a="270"/>             
+            <port name="beta"      x="0.3" y="0" a="270"/>
+            <port name="LandingGearUp" x="0.4" y="0" a="270"/>             
         </ports>
         <animation>
             <icon userpath="bankHeadingSideslipIndicator_base.svg"/>
@@ -37,6 +38,26 @@
                 <transformorigin x="170" y="90"/>
                 <start x="30" y="110" a="0"/>
             </movable>
+            
+            <movable idx="3">
+                <icon userpath="bankHeadingSideslipIndicatorLandGear_movable.svg"/>
+                <data port="LandingGearUp" dataname="Value" idx = "0"/>
+                <movement x="0" y="10" a="0" idx="0"/>
+                <relative idx="2"/>
+                <transformorigin x="37" y="22"/>
+                <resize x="0" y="0.5" idx1="0"/>
+                <start x="133" y="106" a="0"/>
+            </movable>
+            
+            <movable idx="4">
+                <icon userpath="bankHeadingSideslipIndicatorPlaneRear_movable.svg"/>
+                <data port="Phi" dataname="Value" idx = "0"/>
+                <movement x="0" y="0" a="-57.3" idx="0"/>
+                <transformorigin x="170" y="90"/>
+                <start x="30" y="110" a="0"/>
+            </movable>
+            
+            
         </animation>
     </modelobject>
 </hopsanobjectappearance>

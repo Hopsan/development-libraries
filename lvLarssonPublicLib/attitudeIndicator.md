@@ -1,15 +1,20 @@
-![Indicator image](attitudeIndicator_help.svg)
+![Indicator ](attitudeIndicator_help.svg)
 
-Visualisation component for Trajectory. The component reads the X and Y coordinates and heading angle from another simulation model and moves and rotates the vehicle on the XY-plane accordingly.
+Visualisation component of an attitude indicator instrument. The component reads the simulated angles from an aircraft model and animates the indicator accordingly during animation.
+
 
 ### Component type
 Signal/Animation
 
 ### Input Variables
-* **X** - Vehicle center point X-coordinate [m]
-* **Y** - Vehicle center point Y-coordinate [m]
+* **Phi** - Bank angle [rad]
+* **Theta** - Pitch angle [rad]
 * **Psi** - Heading angle [rad]
-* **L** - Width of quadrant [m]
+* **Alpha** - Angle of attack [rad]
+* **AlphaMax** - Maximum angle of attack (used to change the range of the Aoa indicator) [rad]
+* **Beta** - Sideslip angle [rad]
+* **BetaMax** - Maximum sideslip angle (used to change the range of the beta indicator) [rad]
 
-The **L** parameter may be used to scale the motion of the vehicle, since the size of the mission could vary greatly.
+Note that the range for **Theta** is non-linear, i.e. horizon moves twice as fast for abs(**Theta**)>40 degrees.
+
 <!---EQUATION --->
