@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hopsanobjectappearance version="0.3">
+    <modelobject sourcecode="pitchAltitudeAngleOfAttackIndicator.hpp" typename="PitchAltitudeAngleOfAttackIndicator" displayname="Pitch Altitude Angle of Attack Indicator">
+        <icons>
+            <icon scale="1" path="pitchAltitudeAngleOfAttackIndicatorIcon.svg" iconrotation="ON" type="user"/>
+        </icons>
+        <help>
+      <text></text>
+      <md>pitchAltitudeAngleOfAttackIndicator.md</md>
+     </help>
+        <ports>
+            <port name="Theta"         x="0.1" y="0" a="270"/>       
+            <port name="Alpha"         x="0.3" y="0" a="270"/>
+            <port name="Altitude"      x="0.4" y="0" a="270"/>
+            <port name="HC"            x="0.6" y="0" a="270"/> 
+            <port name="LandingGearUp" x="0.8" y="0" a="270"/>            
+        </ports>
+        <animation>
+            <icon userpath="pitchAltitudeAngleOfAttackIndicator_base.svg"/>
+            <movable idx="0">
+                <icon userpath="pitchAltitudeAngleOfAttackIndicatorCloud_movable.svg"/>
+                <data port="HC" dataname="Value" idx = "0"/>
+                <movement y="350" idx="0" divisor="HMax#Value"/>
+                <transformorigin x="100" y="20"/>
+                <start x="0" y="360" a="0"/>
+            </movable>
+            <movable idx="1">
+                <icon userpath="pitchAltitudeAngleOfAttackIndicatorPlane_movable.svg"/>
+                <data port="Altitude" dataname="Value" idx = "0"/>
+                <data port="Theta"    dataname="Value" idx = "1"/>
+                <movement y="350" idx="0" divisor="HMax#Value"/>
+                <movement a="57.3" idx="1"/>
+                <transformorigin x="115" y="40"/>
+                <start x="0" y="340" a="0"/>
+            </movable> 
+            <movable idx="2">
+                <icon userpath="pitchAltitudeAngleOfAttackIndicatorLandGear_movable.svg"/>
+                <data port="LandingGearUp" dataname="Value" idx = "0"/>
+                <relative idx="1"/>
+                <movement y="10" idx="0"/>
+            </movable> 
+           <movable idx="3">
+                <icon userpath="pitchAltitudeAngleOfAttackIndicatorPlane_movable.svg"/>
+               <relative idx="1"/>               
+            </movable>
+            <movable idx="4">
+                <icon userpath="pitchAltitudeAngleOfAttackIndicatorArrow_movable.svg"/>
+                <data port="Alpha" dataname="Value" idx = "0"/>
+                <relative idx="3"/>
+                <movement a="-57.3" idx="0"/>
+                <transformorigin x="1" y="5"/>
+                <start x="114" y="35" a="0"/>
+            </movable>
+            <movable idx="5">
+                <icon userpath="pitchAltitudeAngleOfAttackIndicatorClouds_movable.svg"/>
+                <data port="HC" dataname="Value" idx = "0"/>
+                <movement y="350" idx="0" divisor="HMax#Value"/>
+                <transformorigin x="100" y="20"/>
+                <start x="0" y="360" a="0"/>
+            </movable>
+        </animation>
+    </modelobject>
+</hopsanobjectappearance>

@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanmodelfile hopsancoreversion="2.14.2.20200522.1852" hmfversion="0.4" hopsanguiversion="2.14.2.20200522.1852">
+  <requirements>
+    <componentlibrary>
+      <id>59c07d33-554f-49d3-a163-a928823d4380</id>
+      <name>HopsanDefaultComponentLibrary</name>
+    </componentlibrary>
+    <componentlibrary>
+      <id>LarssonLibPublic</id>
+      <name>LarssonLibPublic</name>
+    </componentlibrary>
+  </requirements>
+  <system subtypename="" disabled="false" cqstype="UndefinedCQSType" name="trajectoryIndicatorTest" typename="Subsystem" locked="false">
+    <simulationtime timestep="0.001" start="0" stop="10" inherit_timestep="true"/>
+    <simulationlogsettings starttime="0" numsamples="2048"/>
+    <parameters/>
+    <aliases/>
+    <hopsangui>
+      <pose flipped="false" y="0" x="0" a="0"/>
+      <nametext visible="0" position="0"/>
+      <animation disabled="false" flowspeed="100" hydraulicmaxpressure="20000000" hydraulicminpressure="0"/>
+      <viewport y="2442.56" x="2542.99" zoom="0.771731"/>
+      <ports hidden="1"/>
+      <names hidden="1"/>
+      <graphics type="user"/>
+      <scriptfile path=""/>
+      <hopsanobjectappearance version="0.3">
+        <modelobject displayname="trajectoryIndicatorTest" typename="Subsystem">
+          <icons>
+            <icon type="defaultmissing" path="subsystemDefault.svg"/>
+          </icons>
+          <ports/>
+          <animation flowspeed="100" hydraulicmaxpressure="20000000" hydraulicminpressure="0"/>
+        </modelobject>
+      </hopsanobjectappearance>
+      <optimization>
+        <settings>
+          <iterations>100</iterations>
+          <nsearchp>8</nsearchp>
+          <refcoeff>1.3</refcoeff>
+          <randfac>0.3</randfac>
+          <forgfac>0</forgfac>
+          <partol>0.0001</partol>
+          <plot>true</plot>
+          <savecsv>false</savecsv>
+          <finaleval>true</finaleval>
+          <logpar>false</logpar>
+        </settings>
+        <parameters/>
+        <objectives/>
+      </optimization>
+      <senstivitityanalysis>
+        <settings>
+          <iterations>100</iterations>
+          <distribution>uniform</distribution>
+        </settings>
+        <parameters/>
+        <plotvariables/>
+      </senstivitityanalysis>
+    </hopsangui>
+    <objects>
+      <component subtypename="" disabled="false" cqstype="S" name="Adjustable_Slider" typename="SignalAnimationSlider" locked="false">
+        <parameters>
+          <parameter type="double" name="in#Value" unit="" value="0"/>
+          <parameter type="double" name="out#Value" unit="" value="0"/>
+          <parameter type="double" name="min" unit="" value="-1000"/>
+          <parameter type="double" name="max" unit="" value="1000"/>
+        </parameters>
+        <ports>
+          <port nodetype="NodeSignal" name="in" porttype="ReadPortType"/>
+          <port nodetype="NodeSignal" name="out" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose flipped="false" y="2319.217391" x="1899.652174" a="270"/>
+          <nametext visible="0" position="0"/>
+          <animation flowspeed="100" hydraulicmaxpressure="20000000" hydraulicminpressure="0">
+            <movable idx="0">
+              <data port="out" dataname="Value" idx="0"/>
+              <start y="48.000000" x="6.500000" a="0.000000"/>
+              <movement y="97.000000" x="0.000000" a="0.000000" divisor="" multiplier="" idx="0"/>
+              <initscale y="1.000000" x="1.000000"/>
+              <resize y="0.000000" x="0.000000" idx2="0" idx1="0" divisor="" multiplier=""/>
+              <initcolor b="0.000000" a="0.000000" r="0.000000" g="0.000000"/>
+              <color b="0.000000" a="0.000000" r="0.000000" g="0.000000" divisor="" multiplier="" idx="0"/>
+              <transformorigin y="0.000000" x="0.000000"/>
+              <relative idx="-1"/>
+              <adjustable xmin="0.000000" port="in" xmax="0.000000" ymax="97.000000" ygain="0.010309" xgain="0.000000" ymin="0.000000" dataname="Value"/>
+            </movable>
+          </animation>
+          <hopsanobjectappearance version="0.3">
+            <modelobject displayname="Adjustable_Slider" typename="SignalAnimationSlider">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component subtypename="" disabled="false" cqstype="C" name="Display" typename="SignalDisplay" locked="false">
+        <parameters>
+          <parameter type="double" name="in#Value" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port nodetype="NodeSignal" name="in" porttype="ReadPortType"/>
+        </ports>
+        <hopsangui>
+          <pose flipped="false" y="2199.130435" x="2040" a="0"/>
+          <nametext visible="0" position="0"/>
+          <animation flowspeed="100" hydraulicmaxpressure="20000000" hydraulicminpressure="0"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject displayname="Display" typename="SignalDisplay">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component subtypename="" disabled="false" cqstype="S" name="Adjustable_Slider_1" typename="SignalAnimationSlider" locked="false">
+        <parameters>
+          <parameter type="double" name="in#Value" unit="" value="0"/>
+          <parameter type="double" name="out#Value" unit="" value="0"/>
+          <parameter type="double" name="min" unit="" value="-1000"/>
+          <parameter type="double" name="max" unit="" value="1000"/>
+        </parameters>
+        <ports>
+          <port nodetype="NodeSignal" name="in" porttype="ReadPortType"/>
+          <port nodetype="NodeSignal" name="out" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose flipped="false" y="2536.913043" x="1887.466052" a="180"/>
+          <nametext visible="0" position="0"/>
+          <animation flowspeed="100" hydraulicmaxpressure="20000000" hydraulicminpressure="0">
+            <movable idx="0">
+              <data port="out" dataname="Value" idx="0"/>
+              <start y="48.000000" x="6.500000" a="0.000000"/>
+              <movement y="97.000000" x="0.000000" a="0.000000" divisor="" multiplier="" idx="0"/>
+              <initscale y="1.000000" x="1.000000"/>
+              <resize y="0.000000" x="0.000000" idx2="0" idx1="0" divisor="" multiplier=""/>
+              <initcolor b="0.000000" a="0.000000" r="0.000000" g="0.000000"/>
+              <color b="0.000000" a="0.000000" r="0.000000" g="0.000000" divisor="" multiplier="" idx="0"/>
+              <transformorigin y="0.000000" x="0.000000"/>
+              <relative idx="-1"/>
+              <adjustable xmin="0.000000" port="in" xmax="0.000000" ymax="97.000000" ygain="0.010309" xgain="0.000000" ymin="0.000000" dataname="Value"/>
+            </movable>
+          </animation>
+          <hopsanobjectappearance version="0.3">
+            <modelobject displayname="Adjustable_Slider_1" typename="SignalAnimationSlider">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component subtypename="" disabled="false" cqstype="C" name="Display_1" typename="SignalDisplay" locked="false">
+        <parameters>
+          <parameter type="double" name="in#Value" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port nodetype="NodeSignal" name="in" porttype="ReadPortType"/>
+        </ports>
+        <hopsangui>
+          <pose flipped="false" y="2479.130435" x="2016.5" a="0"/>
+          <nametext visible="0" position="0"/>
+          <animation flowspeed="100" hydraulicmaxpressure="20000000" hydraulicminpressure="0"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject displayname="Display_1" typename="SignalDisplay">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component subtypename="" disabled="false" cqstype="S" name="deg2rad_1" typename="SignalGain" locked="false">
+        <parameters>
+          <parameter type="double" name="in#Value" unit="" value="0"/>
+          <parameter type="double" name="k#Value" unit="" value="3.1415/180"/>
+        </parameters>
+        <ports>
+          <port nodetype="NodeSignal" name="in" porttype="ReadPortType"/>
+          <port nodetype="NodeSignal" name="k"/>
+          <port nodetype="NodeSignal" name="out" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose flipped="false" y="2752.700037" x="1987.286341" a="0"/>
+          <nametext visible="0" position="0"/>
+          <animation flowspeed="100" hydraulicmaxpressure="20000000" hydraulicminpressure="0"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject displayname="deg2rad_1" typename="SignalGain">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component subtypename="" disabled="false" cqstype="S" name="Trajectory_Indicator" typename="TrajectoryIndicator" locked="false">
+        <parameters>
+          <parameter type="double" name="X#Value" unit="m" value="0"/>
+          <parameter type="double" name="Y#Value" unit="m" value="0"/>
+          <parameter type="double" name="Psi#Value" unit="rad" value="0"/>
+          <parameter type="double" name="L#Value" unit="m" value="1000"/>
+          <parameter type="conditional" name="Vehicle" unit="" value="1"/>
+        </parameters>
+        <ports>
+          <port nodetype="NodeSignal" name="X" porttype="ReadPortType"/>
+          <port nodetype="NodeSignal" name="Y" porttype="ReadPortType"/>
+          <port nodetype="NodeSignal" name="Psi" porttype="ReadPortType"/>
+          <port nodetype="NodeSignal" name="L"/>
+          <port nodetype="NodeSignal" name="showPlane"/>
+          <port nodetype="NodeSignal" name="showCar"/>
+          <port nodetype="NodeSignal" name="showBoat"/>
+          <port nodetype="NodeSignal" name="showDot"/>
+        </ports>
+        <hopsangui>
+          <pose flipped="false" y="2550.11237" x="2674.508095" a="0"/>
+          <nametext visible="0" position="0"/>
+          <animation flowspeed="100" hydraulicmaxpressure="20000000" hydraulicminpressure="0">
+            <movable idx="0">
+              <data port="X" dataname="Value" idx="0"/>
+              <data port="Y" dataname="Value" idx="1"/>
+              <data port="Psi" dataname="Value" idx="2"/>
+              <start y="183.000000" x="186.000000" a="0.000000"/>
+              <movement y="0.000000" x="-200.000000" a="0.000000" divisor="L#Value" multiplier="" idx="0"/>
+              <movement y="200.000000" x="0.000000" a="0.000000" divisor="L#Value" multiplier="" idx="1"/>
+              <movement y="0.000000" x="0.000000" a="-57.300000" divisor="" multiplier="" idx="2"/>
+              <initscale y="1.000000" x="1.000000"/>
+              <initcolor b="0.000000" a="0.000000" r="0.000000" g="0.000000"/>
+              <color b="0.000000" a="0.000000" r="0.000000" g="0.000000" divisor="" multiplier="" idx="0"/>
+              <transformorigin y="17.000000" x="14.000000"/>
+              <relative idx="-1"/>
+              <indicator port="showPlane" dataname="Value"/>
+            </movable>
+            <movable idx="1">
+              <data port="X" dataname="Value" idx="0"/>
+              <data port="Y" dataname="Value" idx="1"/>
+              <data port="Psi" dataname="Value" idx="2"/>
+              <start y="183.000000" x="186.000000" a="0.000000"/>
+              <movement y="0.000000" x="-200.000000" a="0.000000" divisor="L#Value" multiplier="" idx="0"/>
+              <movement y="200.000000" x="0.000000" a="0.000000" divisor="L#Value" multiplier="" idx="1"/>
+              <movement y="0.000000" x="0.000000" a="-57.300000" divisor="" multiplier="" idx="2"/>
+              <initscale y="1.000000" x="1.000000"/>
+              <initcolor b="0.000000" a="0.000000" r="0.000000" g="0.000000"/>
+              <color b="0.000000" a="0.000000" r="0.000000" g="0.000000" divisor="" multiplier="" idx="0"/>
+              <transformorigin y="17.000000" x="14.000000"/>
+              <relative idx="-1"/>
+              <indicator port="showCar" dataname="Value"/>
+            </movable>
+            <movable idx="2">
+              <data port="X" dataname="Value" idx="0"/>
+              <data port="Y" dataname="Value" idx="1"/>
+              <data port="Psi" dataname="Value" idx="2"/>
+              <start y="183.000000" x="186.000000" a="0.000000"/>
+              <movement y="0.000000" x="-200.000000" a="0.000000" divisor="L#Value" multiplier="" idx="0"/>
+              <movement y="200.000000" x="0.000000" a="0.000000" divisor="L#Value" multiplier="" idx="1"/>
+              <movement y="0.000000" x="0.000000" a="-57.300000" divisor="" multiplier="" idx="2"/>
+              <initscale y="1.000000" x="1.000000"/>
+              <initcolor b="0.000000" a="0.000000" r="0.000000" g="0.000000"/>
+              <color b="0.000000" a="0.000000" r="0.000000" g="0.000000" divisor="" multiplier="" idx="0"/>
+              <transformorigin y="17.000000" x="14.000000"/>
+              <relative idx="-1"/>
+              <indicator port="showBoat" dataname="Value"/>
+            </movable>
+            <movable idx="3">
+              <data port="X" dataname="Value" idx="0"/>
+              <data port="Y" dataname="Value" idx="1"/>
+              <data port="Psi" dataname="Value" idx="2"/>
+              <start y="183.000000" x="186.000000" a="0.000000"/>
+              <movement y="0.000000" x="-200.000000" a="0.000000" divisor="L#Value" multiplier="" idx="0"/>
+              <movement y="200.000000" x="0.000000" a="0.000000" divisor="L#Value" multiplier="" idx="1"/>
+              <movement y="0.000000" x="0.000000" a="-57.300000" divisor="" multiplier="" idx="2"/>
+              <initscale y="1.000000" x="1.000000"/>
+              <initcolor b="0.000000" a="0.000000" r="0.000000" g="0.000000"/>
+              <color b="0.000000" a="0.000000" r="0.000000" g="0.000000" divisor="" multiplier="" idx="0"/>
+              <transformorigin y="17.000000" x="14.000000"/>
+              <relative idx="-1"/>
+              <indicator port="showDot" dataname="Value"/>
+            </movable>
+          </animation>
+          <hopsanobjectappearance version="0.3">
+            <modelobject displayname="Trajectory_Indicator" typename="TrajectoryIndicator">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component subtypename="" disabled="false" cqstype="S" name="Adjustable_Slider_2" typename="SignalAnimationSlider" locked="false">
+        <parameters>
+          <parameter type="double" name="in#Value" unit="" value="0"/>
+          <parameter type="double" name="out#Value" unit="" value="0"/>
+          <parameter type="double" name="min" unit="" value="-180"/>
+          <parameter type="double" name="max" unit="" value="180"/>
+        </parameters>
+        <ports>
+          <port nodetype="NodeSignal" name="in" porttype="ReadPortType"/>
+          <port nodetype="NodeSignal" name="out" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose flipped="false" y="2758.057971" x="1910.797102" a="180"/>
+          <nametext visible="0" position="0"/>
+          <animation flowspeed="100" hydraulicmaxpressure="20000000" hydraulicminpressure="0">
+            <movable idx="0">
+              <data port="out" dataname="Value" idx="0"/>
+              <start y="48.000000" x="6.500000" a="0.000000"/>
+              <movement y="97.000000" x="0.000000" a="0.000000" divisor="" multiplier="" idx="0"/>
+              <initscale y="1.000000" x="1.000000"/>
+              <resize y="0.000000" x="0.000000" idx2="0" idx1="0" divisor="" multiplier=""/>
+              <initcolor b="0.000000" a="0.000000" r="0.000000" g="0.000000"/>
+              <color b="0.000000" a="0.000000" r="0.000000" g="0.000000" divisor="" multiplier="" idx="0"/>
+              <transformorigin y="0.000000" x="0.000000"/>
+              <relative idx="-1"/>
+              <adjustable xmin="0.000000" port="in" xmax="0.000000" ymax="97.000000" ygain="0.010309" xgain="0.000000" ymin="0.000000" dataname="Value"/>
+            </movable>
+          </animation>
+          <hopsanobjectappearance version="0.3">
+            <modelobject displayname="Adjustable_Slider_2" typename="SignalAnimationSlider">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component subtypename="" disabled="false" cqstype="C" name="Display_2" typename="SignalDisplay" locked="false">
+        <parameters>
+          <parameter type="double" name="in#Value" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port nodetype="NodeSignal" name="in" porttype="ReadPortType"/>
+        </ports>
+        <hopsangui>
+          <pose flipped="false" y="2687.630435" x="2014" a="0"/>
+          <nametext visible="0" position="0"/>
+          <animation flowspeed="100" hydraulicmaxpressure="20000000" hydraulicminpressure="0"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject displayname="Display_2" typename="SignalDisplay">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <textboxwidget>
+        <hopsangui>
+          <pose y="2147.869565" x="1937.739130"/>
+          <textobject font="Calibri,12,-1,0,50,0,0,0,0,0" text="X [m]" reflow="1" fontcolor="#556b2f"/>
+          <size height="82.608696" width="388.000000"/>
+          <line color="#556b2f" visible="1" width="2" style="solidline"/>
+        </hopsangui>
+      </textboxwidget>
+      <textboxwidget>
+        <hopsangui>
+          <pose y="2428.555503" x="1918.987647"/>
+          <textobject font="Calibri,12,-1,0,50,0,0,0,0,0" text="Y [m]" reflow="1" fontcolor="#556b2f"/>
+          <size height="82.608696" width="392.000000"/>
+          <line color="#556b2f" visible="1" width="2" style="solidline"/>
+        </hopsangui>
+      </textboxwidget>
+      <textboxwidget>
+        <hopsangui>
+          <pose y="2641.710145" x="1942.884058"/>
+          <textobject font="Calibri,12,-1,0,50,0,0,0,0,0" text="Psi (heading angle) [deg]" reflow="1" fontcolor="#556b2f"/>
+          <size height="82.608696" width="392.000000"/>
+          <line color="#556b2f" visible="1" width="2" style="solidline"/>
+        </hopsangui>
+      </textboxwidget>
+    </objects>
+    <connections>
+      <connect startcomponent="Adjustable_Slider_1" startport="out" endcomponent="Display_1" endport="in">
+        <hopsangui>
+          <coordinates>
+            <coordinate y="2536.91304300000001603621" x="1872.46605199999999058491"/>
+            <coordinate y="2536.91304300000001603621" x="1934.00000000000000000000"/>
+            <coordinate y="2479.13043500000003405148" x="1934.00000000000000000000"/>
+            <coordinate y="2479.13043500000003405148" x="1972.50000000000000000000"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Adjustable_Slider" startport="out" endcomponent="Display" endport="in">
+        <hopsangui>
+          <coordinates>
+            <coordinate y="2304.21739100000013422687" x="1899.65217400000005909533"/>
+            <coordinate y="2304.21739100000013422687" x="1928.00000000000000000000"/>
+            <coordinate y="2199.13043500000003405148" x="1928.00000000000000000000"/>
+            <coordinate y="2199.13043500000003405148" x="1996.00000000000000000000"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Adjustable_Slider_2" startport="out" endcomponent="deg2rad_1" endport="in">
+        <hopsangui>
+          <coordinates>
+            <coordinate y="2758.05797100000017962884" x="1895.79710199999999531428"/>
+            <coordinate y="2758.05797100000017962884" x="1937.23188418840572921908"/>
+            <coordinate y="2752.70003700000006574555" x="1937.23188418840572921908"/>
+            <coordinate y="2752.70003700000006574555" x="1974.78634099999999307329"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Adjustable_Slider_2" startport="out" endcomponent="Display_2" endport="in">
+        <hopsangui>
+          <coordinates>
+            <coordinate y="2758.05797100000017962884" x="1895.79710199999999531428"/>
+            <coordinate y="2758.05797100000017962884" x="1959.00000000000000000000"/>
+            <coordinate y="2687.63043500000003405148" x="1959.00000000000000000000"/>
+            <coordinate y="2687.63043500000003405148" x="1970.00000000000000000000"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Trajectory_Indicator" startport="X" endcomponent="Adjustable_Slider" endport="out">
+        <hopsangui>
+          <coordinates>
+            <coordinate y="2350.11236975227620860096" x="2514.50809510604585739202"/>
+            <coordinate y="2138.05152951791433224571" x="2514.50809510604585739202"/>
+            <coordinate y="2138.05152951791433224571" x="1899.65217400000005909533"/>
+            <coordinate y="2304.21739100000013422687" x="1899.65217400000005909533"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Adjustable_Slider_1" startport="out" endcomponent="Trajectory_Indicator" endport="Y">
+        <hopsangui>
+          <coordinates>
+            <coordinate y="2536.91304300000001603621" x="1872.46605199999999058491"/>
+            <coordinate y="2536.91304300000001603621" x="1876.30219075269064887834"/>
+            <coordinate y="2122.50206384869306930341" x="1876.30219075269064887834"/>
+            <coordinate y="2122.50206384869306930341" x="2554.50809510604585739202"/>
+            <coordinate y="2350.11236975227620860096" x="2554.50809510604585739202"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Trajectory_Indicator" startport="Psi" endcomponent="deg2rad_1" endport="out">
+        <hopsangui>
+          <coordinates>
+            <coordinate y="2350.11236975227620860096" x="2594.50809510604585739202"/>
+            <coordinate y="2118.61469743138741250732" x="2594.50809510604585739202"/>
+            <coordinate y="2118.61469743138741250732" x="1746.72331017584747314686"/>
+            <coordinate y="2827.41117418672047278960" x="1746.72331017584747314686"/>
+            <coordinate y="2827.41117418672047278960" x="2046.05052430835530685727"/>
+            <coordinate y="2752.70003700000006574555" x="2046.05052430835530685727"/>
+            <coordinate y="2752.70003700000006574555" x="1999.78634099999999307329"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+    </connections>
+  </system>
+</hopsanmodelfile>
