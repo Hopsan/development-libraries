@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hopsanobjectappearance version="0.3">
+    <modelobject sourcecode="attitudeIndicator.hpp" typename="AttitudeIndicator" displayname="Attitude Indicator">
+        <icons>
+                <icon scale="1" path="attitudeIndicatorIcon.svg" iconrotation="ON" type="user"/>
+        </icons>
+        <help>
+        <text></text>
+            <md>attitudeIndicator.md</md>
+        </help>
+        <ports>
+            <port name="Psi"      x="0.05"  y="0" a="270"/>
+            <port name="Theta"    x="0.1"  y="0" a="270"/>
+            <port name="Phi"      x="0.15"  y="0" a="270"/>
+            <port name="Alpha"     x="0.25"  y="0" a="270"/>
+            <port name="Beta"    x="0.3"  y="0" a="270"/>               
+        </ports>
+        <animation>
+            <icon userpath="attitudeIndicator_base.svg"/>
+            <movable idx="0">
+                <icon userpath="attitudeIndicatorSky_movable.svg"/>
+                <data port="Phi"  dataname="Value"    idx = "0"/>
+                <movement a="57.3"  idx="0" />
+                <transformorigin x="200" y="200"/>
+                <start x="0" y="0" a="0"/>
+            </movable>
+            <movable idx="1">
+                <icon userpath="attitudeIndicatorGround_movable.svg"/>
+                <data port="ThetaAni"  dataname="Value"    idx = "0"/>
+                <relative idx="0"/>                
+                <resize x="0" y="-1.05" idx1="0"/>
+                <transformorigin x="137.5" y="137"/>
+                <start x="62.5" y="337" a="0"/>
+                <initscale x="1" y="-1"/>
+            </movable> 
+            <movable idx="2">
+                <icon userpath="attitudeIndicatorHorizon_movable.svg"/>
+                <data port="ThetaAni"  dataname="Value"    idx = "0"/>
+                <relative idx="0"/>
+                <movement y="-143.239"  idx="0" />
+                <transformorigin x="138" y="2"/>
+                <start x="62" y="198" a="0"/>
+            </movable>
+            <movable idx="3">
+                <icon userpath="attitudeIndicatorPitch_movable.svg"/>
+                <relative idx="0"/>
+                <transformorigin x="55" y="135"/>
+                <start x="145" y="65"/>
+            </movable>
+            <movable idx="4">
+                <icon userpath="attitudeIndicatorRoll_movable.svg"/>
+                <relative idx="0"/>
+                <transformorigin x="200" y="200"/>
+            </movable>
+            <movable idx="5">
+                <icon userpath="attitudeIndicatorYaw_movable.svg"/>
+                <data port="Psi"  dataname="Value"    idx = "0"/>
+                <movement a="57.3" idx="0"/>
+                <transformorigin x="200" y="200"/>
+            </movable>
+            <movable idx="6">
+                <icon userpath="attitudeIndicatorTop_movable.svg"/>
+            </movable>
+            <movable idx="7">
+                <icon userpath="attitudeIndicatorBeta_movable.svg"/>
+                <data port="Beta"  dataname="Value"    idx = "0"/>
+                <movement x="-10"  idx="0" divisor="BetaMax#Value"/>
+                <transformorigin x="12" y="4"/>
+                <start x="188" y="82.5"/>
+            </movable>
+            <movable idx="8">
+                <icon userpath="attitudeIndicatorAoa_movable.svg"/>
+                <data port="Alpha"  dataname="Value"    idx = "0"/>
+                <movement a="-30"  idx="0" divisor="AlphaMax#Value"/>
+                <transformorigin x="189" y="8"/>
+                <start x="11" y="192" a="0"/>
+            </movable>
+        </animation>
+    </modelobject>
+</hopsanobjectappearance>

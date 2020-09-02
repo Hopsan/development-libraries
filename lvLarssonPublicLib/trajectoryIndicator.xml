@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hopsanobjectappearance version="0.3">
+    <modelobject sourcecode="trajectoryIndicator.hpp" typename="TrajectoryIndicator" displayname="Trajectory Indicator">
+        <icons>
+                <icon scale="1" path="trajectoryIndicatorIcon.svg" iconrotation="ON" type="user"/>
+        </icons>
+        <help>
+        <text></text>
+            <md>trajectoryIndicator.md</md>
+        </help>
+        <ports>
+            <port name="X"    x="0.1"  y="0" a="270"/>
+            <port name="Y"    x="0.2"  y="0" a="270"/>
+            <port name="Psi"  x="0.3"  y="0" a="270"/>             
+        </ports>
+        <animation>
+            <icon userpath="trajectoryIndicator_base.svg"/>
+            <movable idx="0">
+                <icon userpath="trajectoryIndicatorPlane_movable.svg"/>
+                <data port="X"    dataname="Value"    idx = "0"/>
+                <data port="Y"    dataname="Value"    idx = "1"/>
+                <data port="Psi"  dataname="Value"    idx = "2"/>
+                <indicator port="showPlane" dataname="Value"/>
+                <movement x="-200"   idx="0"  divisor="L#Value"/>
+                <movement y="200"    idx="1"  divisor="L#Value"/>
+                <movement a="-57.3"  idx="2" />
+                <transformorigin x="14" y="17"/>
+                <start x="186" y="183" a="0"/>
+            </movable>
+            <movable idx="1">
+                <icon userpath="trajectoryIndicatorCar_movable.svg"/>
+                <data port="X"    dataname="Value"    idx = "0"/>
+                <data port="Y"    dataname="Value"    idx = "1"/>
+                <data port="Psi"  dataname="Value"    idx = "2"/>
+                <indicator port="showCar" dataname="Value"/>
+                <movement x="-200"   idx="0"  divisor="L#Value"/>
+                <movement y="200"    idx="1"  divisor="L#Value"/>
+                <movement a="-57.3"  idx="2" />
+                <transformorigin x="14" y="17"/>
+                <start x="186" y="183" a="0"/>
+                <start x="-4" y="-11" a="0"/>
+            </movable>
+            <movable idx="2">
+                <icon userpath="trajectoryIndicatorBoat_movable.svg"/>
+                <data port="X"    dataname="Value"    idx = "0"/>
+                <data port="Y"    dataname="Value"    idx = "1"/>
+                <data port="Psi"  dataname="Value"    idx = "2"/>
+                <indicator port="showBoat" dataname="Value"/>
+                <movement x="-200"   idx="0"  divisor="L#Value"/>
+                <movement y="200"    idx="1"  divisor="L#Value"/>
+                <movement a="-57.3"  idx="2" />
+                <transformorigin x="14" y="17"/>
+                <start x="186" y="183" a="0"/>
+                <start x="-4" y="-11" a="0"/>
+            </movable>
+            <movable idx="3">
+                <icon userpath="trajectoryIndicatorDot_movable.svg"/>
+                <data port="X"    dataname="Value"    idx = "0"/>
+                <data port="Y"    dataname="Value"    idx = "1"/>
+                <data port="Psi"  dataname="Value"    idx = "2"/>
+                <indicator port="showDot" dataname="Value"/>
+                <movement x="-200"   idx="0"  divisor="L#Value"/>
+                <movement y="200"    idx="1"  divisor="L#Value"/>
+                <movement a="-57.3"  idx="2" />
+                <transformorigin x="14" y="17"/>
+                <start x="186" y="183" a="0"/>
+                <start x="-4" y="-11" a="0"/>
+            </movable>
+        </animation>
+    </modelobject>
+</hopsanobjectappearance>

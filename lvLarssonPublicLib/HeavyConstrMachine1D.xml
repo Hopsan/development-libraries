@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject typename="HeavyConstrMachine1D" displayname="Heavy Construction Machine 1D" sourcecode="HeavyConstrMachine1D.hpp" libpath="" recompilable="true">
+    <icons>
+      <icon scale="1" path="HeavyConstrMachine1DIcon.svg" iconrotation="ON" type="user"/>
+      <icon scale="1" path="HeavyConstrMachine1DIcon.svg" iconrotation="ON" type="iso"/>
+    </icons>
+
+    <help>
+      <text> </text>
+      <md>HeavyConstrMachine1D.md</md>
+
+    </help>
+
+    <ports>
+      <port name="P1" x="0.4" y="1" a="90"/>
+	  <port name="P2" x="0.7" y="0.817" a="0"/>
+      <port name="Fr" x="0.934" y="0.0933" a="0"/>
+      <port name="FB" x="0.971" y="0.145" a="0"/>
+      <port name="Fg" x="1" y="0.19" a="0"/>
+    </ports>
+        <animation>
+            <icon userpath="HeavyConstrMachine1D_base.svg"/>
+            <movable>
+                <icon userpath="HeavyConstrMachine1D_movable.svg"/>
+                <data port="P2" dataname="Position" idx="0"/>
+                <movement x="-77.5" y="0" a="0" idx="0"/>
+                <start x="0" y="0" a="0"/>
+                <transformorigin x="0" y="0"/>
+                <movingport startx="203.71" portname="P2" starty="137.83"/>
+            </movable>
+        </animation>
+
+
+
+
+  </modelobject>
+</hopsanobjectappearance>
