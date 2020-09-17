@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsancomponentlibrary version="0.3" libversion="1" name="ActivityDiagramLibrary">
+    <id>afd1b9b5-0b66-4d17-9e90-1da59a2be242</id>
+    <name>ActivityDiagramLibrary</name>
+    <buildflags>
+        <cflags>-std=c++11</cflags>
+    </buildflags>
+    <lib debug_ext="_d">ActivityDiagramLibrary</lib>  
+    <source>ActivityDiagramLib.cc</source>
+	
+    <component>ActivityDiagram/ActivityDiagramInitiateState.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramEdge.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramAction.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramActionN.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramDecision.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramForkN.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramJoinN.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramMergeN.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramFork.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramJoin0.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramJoin.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramMerge0.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramMerge.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramFinal.hpp</component>
+    <component>ActivityDiagram/ActivityDiagramFinalNode.hpp</component>
+
+    <componentxml>ActivityDiagram/ActivityDiagramInitiateState.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramActionN.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramAction.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramDecision.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramEdge.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramFinalNode.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramFinal.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramForkN.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramFork.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramJoin0.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramJoinN.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramJoin.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramMerge0.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramMergeN.xml</componentxml>
+    <componentxml>ActivityDiagram/ActivityDiagramMerge.xml</componentxml>
+</hopsancomponentlibrary>
