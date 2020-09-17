@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hopsanobjectappearance version="0.3">
+    <modelobject sourcecode="PneumaticPistonMass.hpp" typename="PneumaticPistonMass" displayname="PneumaticPistonMass">
+        <icons>
+            <icon scale="1" path="PneumaticPistonMass.svg" iconrotation="ON" type="user"/>
+            <icon scale="1" path="PneumaticPistonMass.svg" iconrotation="ON" type="iso"/>
+        </icons>
+		<help>
+            <text>Double acting pneumatic piston with spring return</text>
+            <link>PneumaticPistonSAMass.nb</link>
+            <link>PneumaticPistonSAMass.pdf</link>
+        </help>           
+        <ports>
+            <port x="0.041" y="1" enabled="true" a="90" name="P1" autoplaced="true"/>
+			<port x="0.676" y="1" enabled="true" a="90" name="P2" autoplaced="true"/>
+            <port x="1" y="0.5" enabled="true" a="0" name="PL" autoplaced="true"/>
+        </ports>
+        <animation flowspeed="100"/>
+    </modelobject>
+</hopsanobjectappearance>

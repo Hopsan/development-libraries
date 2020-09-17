@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hopsanobjectappearance version="0.3">
+    <modelobject sourcecode="PneumaticValve52.hpp" typename="PneumaticValve52" displayname="PneumaticValve52">
+        <icons>
+            <icon scale="1" path="PneumaticValve52.svg" iconrotation="ON" type="user"/>
+            <icon scale="1" path="PneumaticValve52.svg" iconrotation="ON" type="iso"/>
+        </icons>
+          <help>
+            <text>Pnenumatic Valve52.</text>
+            <link>PneumaticValve52.nb</link>
+            <link>PneumaticValve52.pdf</link>
+        </help>           
+		<ports>
+            <port x="0.58" y="0" enabled="true" a="90" name="P4" autoplaced="true"/>
+            <port x="0.74" y="0" enabled="true" a="90" name="P2" autoplaced="true"/>
+            <port x="0.74" y="1" enabled="true" a="270" name="P3" autoplaced="true"/>
+            <port x="0.58" y="1" enabled="true" a="270" name="P5" autoplaced="true"/>
+           <port x="0.66" y="1" enabled="true" a="270" name="P1" autoplaced="true"/>
+            <port x="0" y="0.75" enabled="true" a="180" name="xin" autoplaced="true"/>
+        </ports>
+        <animation flowspeed="100"/>
+    </modelobject>
+</hopsanobjectappearance>

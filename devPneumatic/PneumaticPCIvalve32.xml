@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hopsanobjectappearance version="0.3">
+    <modelobject sourcecode="PneumaticPCIvalve32.hpp" typename="PneumaticPCIvalve32" displayname="PneumaticPCIvalve32">
+        <icons>
+            <icon scale="1" path="PneumaticPCIvalve32.svg" iconrotation="ON" type="user"/>
+            <icon scale="1" path="PneumaticPCIvalve32.svg" iconrotation="ON" type="iso"/>
+        </icons>
+          <help>
+            <text>Pnenumatic pressure controlled inverted 3/2 valve.</text>
+            <link>PneumaticPCIvalve32.nb</link>
+            <link>PneumaticPCIvalve32.pdf</link>
+        </help>           
+		<ports>
+            <port x="0.61" y="1" enabled="true" a="270" name="P1" autoplaced="true"/>
+            <port x="0.61" y="0" enabled="true" a="90" name="P2" autoplaced="true"/>
+            <port x="0.72" y="1" enabled="true" a="270" name="P3" autoplaced="true"/>
+           <port x="0" y="0.75" enabled="true" a="180" name="PS" autoplaced="true"/>
+        </ports>
+        <animation flowspeed="100"/>
+    </modelobject>
+</hopsanobjectappearance>

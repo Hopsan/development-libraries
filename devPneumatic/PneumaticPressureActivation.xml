@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hopsanobjectappearance version="0.3">
+    <modelobject sourcecode="PneumaticPressureActivation.hpp" typename="PneumaticPressureActivation" displayname="PneumaticPressureActivation">
+        <icons>
+            <icon scale="1" path="PneumaticPressureActivation.svg" iconrotation="ON" type="user"/>
+            <icon scale="1" path="PneumaticPressureActivation.svg" iconrotation="ON" type="iso"/>
+        </icons>
+          <help>
+            <text>Pneumatic Pressure Activation.</text>
+            <link>PneumaticPressureActivation.nb</link>
+            <link>PneumaticPressureActivation.pdf</link>
+        </help>           
+		<ports>
+            <port x="0" y="0.5" enabled="true" a="180" name="P1" autoplaced="true"/>
+            <port x="1" y="0.5" enabled="true" a="0" name="u" autoplaced="true"/>
+        </ports>
+        <animation flowspeed="100"/>
+    </modelobject>
+</hopsanobjectappearance>
