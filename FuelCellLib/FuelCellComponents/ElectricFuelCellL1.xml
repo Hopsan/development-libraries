@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject sourcecode="ElectricFuelCellL1.hpp" displayname="ElectricFuelCellL1" typename="ElectricFuelCellL1">
+    <icons>
+      <icon iconrotation="" scale="1" path="ElectricFuelCell.svg" type="user"/>
+      <icon iconrotation="" scale="1" path="ElectricFuelCell.svg" type="iso"/>
+    </icons>
+    <ports>
+      <port x="0.5" y="0" name="Pel1" a="270" autoplaced="true" enabled="true"/>
+      <port x="0" y="0.1" name="uref" a="180" autoplaced="true" enabled="true"/>
+      <port x="0.5" y="0.8" name="Pfc" a="90" autoplaced="true" enabled="true"/>
+      <port x="0.5" y="1" name="thetaFc" a="90" autoplaced="true" enabled="true"/>
+      <port x="0" y="0.5" name="Pp1" a="180" autoplaced="true" enabled="true"/>
+      <port x="0.75" y="1" name="mFc" a="90" autoplaced="true" enabled="true"/>
+      <port x="0.25" y="1" name="etaFc" a="90" autoplaced="true" enabled="true"/>
+    </ports>
+    <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+  </modelobject>
+</hopsanobjectappearance>
