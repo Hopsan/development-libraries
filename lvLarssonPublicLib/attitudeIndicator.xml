@@ -28,10 +28,10 @@
                 <icon userpath="attitudeIndicatorGround_movable.svg"/>
                 <data port="ThetaAni"  dataname="Value"    idx = "0"/>
                 <relative idx="0"/>                
-                <resize x="0" y="-1.05" idx1="0"/>
+                <resize x="0" y="-18" idx1="0"/>
                 <transformorigin x="137.5" y="137"/>
                 <start x="62.5" y="337" a="0"/>
-                <initscale x="1" y="-1"/>
+                <initscale x="1" y="-17"/>
             </movable> 
             <movable idx="2">
                 <icon userpath="attitudeIndicatorHorizon_movable.svg"/>
