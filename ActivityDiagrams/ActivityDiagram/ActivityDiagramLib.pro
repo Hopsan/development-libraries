@@ -29,21 +29,21 @@ SOURCES += \
     TestLib.cc
 
 HEADERS += \
-	ActivityDiagram/ActivityDiagramInitiateState.hpp	
-	ActivityDiagram/ActivityDiagramEdge.hpp
-	ActivityDiagram/ActivityDiagramActionN.hpp
-	ActivityDiagram/ActivityDiagramAction.hpp
-	ActivityDiagram/ActivityDiagramDecision.hpp
-	ActivityDiagram/ActivityDiagramJoinN.hpp
-	ActivityDiagram/ActivityDiagramForkN.hpp
-	ActivityDiagram/ActivityDiagramJoin0.hpp
-	ActivityDiagram/ActivityDiagramJoin.hpp
-	ActivityDiagram/ActivityDiagramFork.hpp
-	ActivityDiagram/ActivityDiagramMerge0.hpp
-	ActivityDiagram/ActivityDiagramMerge.hpp
-	ActivityDiagram/ActivityDiagramMergeN.hpp
-	ActivityDiagram/ActivityDiagramFinal.hpp	
-	ActivityDiagram/ActivityDiagramFinalNode.hpp	
+	ActivityDiagramInitiateState.hpp	
+	ActivityDiagramEdge.hpp
+	ActivityDiagramActionN.hpp
+	ActivityDiagramAction.hpp
+	ActivityDiagramDecision.hpp
+	ActivityDiagramJoinN.hpp
+	ActivityDiagramForkN.hpp
+	ActivityDiagramJoin0.hpp
+	ActivityDiagramJoin.hpp
+	ActivityDiagramFork.hpp
+	ActivityDiagramMerge0.hpp
+	ActivityDiagramMerge.hpp
+	ActivityDiagramMergeN.hpp
+	ActivityDiagramFinal.hpp	
+	ActivityDiagramFinalNode.hpp	
 
 	
 OTHER_FILES += \
