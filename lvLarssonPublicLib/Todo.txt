@@ -1,5 +1,8 @@
 General:
 - Move to debLibrary repo
+	
+	trajectoryIndicator:
+		- Add custom limits on axes (xMin, xMax, yMin, yMax)
 	pitchIndicator:
 
 	bankIndicator:
