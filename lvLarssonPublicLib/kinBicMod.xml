@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hopsanobjectappearance version="0.3">
+    <modelobject sourcecode="kinBicMod.hpp" typename="KinematicBicycleModel" displayname="Kinematic Bicycle Model">
+        <icons>
+            <icon scale="1" path="kinBicModIcon.svg" iconrotation="ON" type="user"/>
+        </icons>
+        <help>
+        <text></text>
+            <md>kinBicMod.md</md>
+        </help>
+        <ports>
+            <port name="v"       x="0.25" y="0" a="270"/>
+            <port name="delta"   x="0.75" y="0" a="270"/>
+            <port name="xr"      x="0.15" y="1" a="90"/>
+            <port name="yr"      x="0.3" y="1" a="90"/>
+            <port name="psi"     x="0.45" y="1" a="90"/>
+            <port name="xCog"    x="0.6" y="1" a="90"/>
+            <port name="yCog"    x="0.75" y="1" a="90"/>
+            <port name="beta"    x="0.9" y="1" a="90"/>            
+        </ports>
+        <animation>
+            <icon userpath="kinBicMod_base.svg"/>
+            <movable idx="0">
+                <icon userpath="kinBicMod_base.svg"/>
+                <data port="ZResizer" dataname="Value" idx = "0"/>
+                <resize x="1" y="1" idx1="0"/>
+                <movement x="62" y="70" a="0" idx="0"/>
+            </movable>
+            <movable idx="1">
+                <icon userpath="kinBicMod_base.svg"/>
+                <data port="bGResizer" dataname="Value" idx = "0"/>
+                <relative idx="0"/>
+                <resize x="1" y="1" idx1="0"/>
+                <movement x="62" y="70" a="0" idx="0"/>
+            </movable>
+            <movable idx="2">
+                <icon userpath="kinBicModBgPlain_movable.svg"/>
+                <data port="plainOff" dataname="Value" idx = "0"/>
+                <resize x="1" y="1" idx1="0"/>
+                <initscale x="1" y="1"/>
+                <relative idx="1"/>
+                <start x="-62" y="-70" a="0"/>
+            </movable>
+            <movable idx="3">
+                <icon userpath="kinBicModBgQuarry_movable.svg"/>
+                <data port="quarryOff" dataname="Value" idx = "0"/>
+                <resize x="1" y="1" idx1="0"/>
+                <initscale x="1" y="1"/>
+                <relative idx="1"/>
+                <transformorigin x="0" y="0"/>
+                <start x="-62" y="-70" a="0"/>
+            </movable>
+            <movable idx="4">
+                <icon userpath="kinBicModBgSviestad_movable.svg"/>
+                <data port="sviestadOff" dataname="Value" idx = "0"/>
+                <resize x="1" y="1" idx1="0"/>
+                <initscale x="1" y="1"/>
+                <relative idx="1"/>
+                <transformorigin x="0" y="0"/>
+                <start x="-62" y="-670" a="0"/>
+            </movable>
+            <movable idx="5">
+                <icon userpath="kinBicModHidden_movable.svg"/>
+                <data port="xr"   dataname="Value" idx="0"/>
+                <data port="yr"   dataname="Value" idx="1"/>
+                <data port="psi" dataname="Value" idx="2"/>
+                <data port="bGResizer" dataname="Value" idx="3"/>
+                <data port="vehResizer" dataname="Value" idx="4"/>
+                <movement x="-2.5" y="0" a="0" idx="0"/>
+                <movement x="0" y="2.5" a="0" idx="1"/>
+                <movement x="0" y="0" a="57.3" idx="2"/>
+                <movement x="1" y="401" a="0" idx="3"/>
+                <movement x="-1" y="-1" idx = "4"/>
+                <resize x="1" y="1" idx1 = "4"/>
+                <start x="-62" y="330" a="0"/>
+                <relative idx="0"/>
+                <transformorigin x="1" y="1"/>
+            </movable>
+            <movable idx="6">
+                <icon userpath="kinBicModBlBase_movable.svg"/>
+                <data port="bLOff" dataname="Value" idx = "0"/>
+                <start x="-4" y="-11" a="0"/>
+                <relative idx="5"/>
+                <resize x="1" y="1" idx1="0"/>
+                <initscale x="1" y="1"/>
+                <transformorigin x="5" y="12"/>
+            </movable>
+            <movable idx="7">
+                <icon userpath="kinBicModBlLeft_movable.svg"/>
+                <data port="deltaL" dataname="Value" idx = "0"/>
+                <movement a="57.3" idx="0"/>
+                <start x="1.5" y="5.05" a="0"/>
+                <relative idx="6"/>
+                <transformorigin x="1" y="1.5"/>
+            </movable>
+            <movable idx="8">
+                <icon userpath="kinBicModBlRight_movable.svg"/>
+                <data port="deltaR" dataname="Value" idx = "0"/>
+                <movement a="57.3" idx="0"/>
+                <start x="6.5" y="5.05" a="0"/>
+                <relative idx="6"/>
+                <transformorigin x="1" y="1.5"/>
+            </movable>
+            <movable idx="9">
+                <icon userpath="kinBicModBlLoader_movable.svg"/>
+                <relative idx="6"/>
+            </movable>
+            <movable idx="10">
+                <icon userpath="kinBicModBikeBase_movable.svg"/>
+                <data port="bikeOff" dataname="Value" idx = "0"/>
+                <start x="0" y="-5" a="0"/>
+                <relative idx="5"/>
+                <resize x="1" y="1" idx1="0"/>
+                <initscale x="1" y="1"/>
+                <transformorigin x="1" y="6"/>
+            </movable>
+            <movable idx="11">
+                <icon userpath="kinBicModBikeFront_movable.svg"/>
+                <data port="deltaL" dataname="Value" idx = "0"/>
+                <movement a="57.3" idx="0"/>
+                <relative idx="10"/>
+                <transformorigin x="1" y="1"/>
+            </movable>
+            <movable idx="12">
+                <icon userpath="kinBicModCarBase_movable.svg"/>
+                <data port="carOff" dataname="Value" idx = "0"/>
+                <start x="-1.5" y="-7.875" a="0"/>
+                <relative idx="5"/>
+                <resize x="1" y="1" idx1="0"/>
+                <initscale x="1" y="1"/>
+                <transformorigin x="2.5" y="8.875"/>
+            </movable>
+            <movable idx="13">
+                <icon userpath="kinBicModCarWheel_movable.svg"/>
+                <data port="deltaL" dataname="Value" idx = "0"/>
+                <movement a="57.3" idx="0"/>
+                <relative idx="12"/>
+                <start x="0.17" y="1" a="0"/>
+                <transformorigin x="0.5" y="1"/>
+            </movable>
+            <movable idx="14">
+                <icon userpath="kinBicModCarWheel_movable.svg"/>
+                <data port="deltaR" dataname="Value" idx = "0"/>
+                <movement a="57.3" idx="0"/>
+                <relative idx="12"/>
+                <start x="3.83" y="1" a="0"/>
+                <transformorigin x="0.5" y="1"/>
+            </movable>
+            <movable idx="15">
+                <icon userpath="kinBicModCarTop_movable.svg"/>
+                <relative idx="12"/>
+            </movable>
+            <movable idx="16">
+                <icon userpath="kinBicModCoG_movable.svg"/>
+                <data port="xCog" dataname="Value" idx="0"/>
+                <data port="yCog" dataname="Value" idx="1"/>
+                <data port="vehResizer" dataname="Value" idx="2"/>
+                <data port="bGResizer" dataname="Value" idx="3"/>
+                <movement x="-2.5" idx="0"/>
+                <movement y="2.5" idx="1"/>
+                <movement x="-1" y="-1" idx="2"/>
+                <movement x="1" y="401" idx="3"/>
+                <resize x="1" y="1" idx1 = "2"/>
+                <relative idx="0"/>
+                <start x="-62" y="330" a="0"/>
+                <transformorigin x="1" y="1"/>
+            </movable>
+        </animation>
+    </modelobject>
+</hopsanobjectappearance>

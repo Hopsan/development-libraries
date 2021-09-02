@@ -1,0 +1,1542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanmodelfile hopsancoreversion="2.14.2.20200522.1852" hmfversion="0.4" hopsanguiversion="2.14.2.20200522.1852">
+  <requirements>
+    <componentlibrary>
+      <id>59c07d33-554f-49d3-a163-a928823d4380</id>
+      <name>HopsanDefaultComponentLibrary</name>
+    </componentlibrary>
+    <componentlibrary>
+      <id>LarssonLibPublic</id>
+      <name>LarssonLibPublic</name>
+    </componentlibrary>
+  </requirements>
+  <system disabled="false" name="kinBicModTest" cqstype="UndefinedCQSType" typename="Subsystem" locked="false" subtypename="">
+    <simulationtime start="0" timestep="0.001" stop="10" inherit_timestep="true"/>
+    <simulationlogsettings numsamples="2048" starttime="0"/>
+    <parameters/>
+    <aliases/>
+    <hopsangui>
+      <pose x="0" y="0" flipped="false" a="0"/>
+      <nametext position="0" visible="0"/>
+      <animation disabled="false" flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+      <viewport x="2340.23" y="2339.27" zoom="1.04712"/>
+      <ports hidden="0"/>
+      <names hidden="0"/>
+      <graphics type="user"/>
+      <scriptfile path=""/>
+      <hopsanobjectappearance version="0.3">
+        <modelobject typename="Subsystem" displayname="kinBicModTest">
+          <icons>
+            <icon type="defaultmissing" path="subsystemDefault.svg"/>
+          </icons>
+          <ports/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+        </modelobject>
+      </hopsanobjectappearance>
+      <optimization>
+        <settings>
+          <iterations>100</iterations>
+          <nsearchp>8</nsearchp>
+          <refcoeff>1.3</refcoeff>
+          <randfac>0.3</randfac>
+          <forgfac>0</forgfac>
+          <partol>0.0001</partol>
+          <plot>true</plot>
+          <savecsv>false</savecsv>
+          <finaleval>true</finaleval>
+          <logpar>false</logpar>
+        </settings>
+        <parameters/>
+        <objectives/>
+      </optimization>
+      <senstivitityanalysis>
+        <settings>
+          <iterations>100</iterations>
+          <distribution>uniform</distribution>
+        </settings>
+        <parameters/>
+        <plotvariables/>
+      </senstivitityanalysis>
+    </hopsangui>
+    <objects>
+      <component disabled="false" name="Scope_1" cqstype="S" typename="SignalSink" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in_bottom#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadMultiportType" nodetype="NodeSignal"/>
+          <port name="in_bottom" porttype="ReadPortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1874.631124" y="2419.105498" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalSink" displayname="Scope_1">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="Scope_4" cqstype="S" typename="SignalSink" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in_bottom#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadMultiportType" nodetype="NodeSignal"/>
+          <port name="in_bottom" porttype="ReadPortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="2324.103518" y="2325.392539" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalSink" displayname="Scope_4">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="Kinematic_Bicycle_Model_1" cqstype="S" typename="KinematicBicycleModel" locked="false" subtypename="">
+        <parameters>
+          <parameter name="v#Value" type="double" unit="m/s" value="0"/>
+          <parameter name="delta#Value" type="double" unit="rad" value="0"/>
+          <parameter name="lr#Value" type="double" unit="m" value="1"/>
+          <parameter name="lx#Value" type="double" unit="m" value="0"/>
+          <parameter name="Vehicle" type="conditional" unit="" value="1"/>
+          <parameter name="Steering" type="conditional" unit="" value="0"/>
+          <parameter name="Background" type="conditional" unit="" value="0"/>
+          <parameter name="B" type="double" unit="m" value="2.75"/>
+          <parameter name="Lb" type="double" unit="m" value="160"/>
+          <parameter name="scaleV" type="double" unit="-" value="1"/>
+          <parameter name="scaleZ" type="double" unit="-" value="20"/>
+          <parameter name="xr#Value" type="double" unit="" value="0"/>
+          <parameter name="yr#Value" type="double" unit="" value="0"/>
+          <parameter name="psi#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="v" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="delta" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="lr" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="lx" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="xr" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="yr" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="psi" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="xCog" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="yCog" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="beta" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="deltaL" nodetype="NodeSignal"/>
+          <port name="deltaR" nodetype="NodeSignal"/>
+          <port name="vehResizer" nodetype="NodeSignal"/>
+          <port name="bGResizer" nodetype="NodeSignal"/>
+          <port name="ZResizer" nodetype="NodeSignal"/>
+          <port name="quarryOff" nodetype="NodeSignal"/>
+          <port name="plainOff" nodetype="NodeSignal"/>
+          <port name="sviestadOff" nodetype="NodeSignal"/>
+          <port name="bLOff" nodetype="NodeSignal"/>
+          <port name="bikeOff" nodetype="NodeSignal"/>
+          <port name="carOff" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1808.415664" y="2181.40981" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000">
+            <movable idx="0">
+              <data dataname="Value" port="ZResizer" idx="0"/>
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <movement x="62.000000" y="70.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="-1"/>
+            </movable>
+            <movable idx="1">
+              <data dataname="Value" port="bGResizer" idx="0"/>
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <movement x="62.000000" y="70.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="2">
+              <data dataname="Value" port="plainOff" idx="0"/>
+              <start x="-62.000000" y="-70.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="3">
+              <data dataname="Value" port="quarryOff" idx="0"/>
+              <start x="-62.000000" y="-70.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="4">
+              <data dataname="Value" port="sviestadOff" idx="0"/>
+              <start x="-62.000000" y="-670.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="5">
+              <data dataname="Value" port="xr" idx="0"/>
+              <data dataname="Value" port="yr" idx="1"/>
+              <data dataname="Value" port="psi" idx="2"/>
+              <data dataname="Value" port="bGResizer" idx="3"/>
+              <data dataname="Value" port="vehResizer" idx="4"/>
+              <start x="-62.000000" y="330.000000" a="0.000000"/>
+              <movement x="-2.500000" y="0.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <movement x="0.000000" y="2.500000" divisor="" multiplier="" a="0.000000" idx="1"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="2"/>
+              <movement x="1.000000" y="401.000000" divisor="" multiplier="" a="0.000000" idx="3"/>
+              <movement x="-1.000000" y="-1.000000" divisor="" multiplier="" a="0.000000" idx="4"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="4" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.000000"/>
+              <relative idx="0"/>
+            </movable>
+            <movable idx="6">
+              <data dataname="Value" port="bLOff" idx="0"/>
+              <start x="-4.000000" y="-11.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="5.000000" y="12.000000"/>
+              <relative idx="5"/>
+            </movable>
+            <movable idx="7">
+              <data dataname="Value" port="deltaL" idx="0"/>
+              <start x="1.500000" y="5.050000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.500000"/>
+              <relative idx="6"/>
+            </movable>
+            <movable idx="8">
+              <data dataname="Value" port="deltaR" idx="0"/>
+              <start x="6.500000" y="5.050000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.500000"/>
+              <relative idx="6"/>
+            </movable>
+            <movable idx="9">
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="6"/>
+            </movable>
+            <movable idx="10">
+              <data dataname="Value" port="bikeOff" idx="0"/>
+              <start x="0.000000" y="-5.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="6.000000"/>
+              <relative idx="5"/>
+            </movable>
+            <movable idx="11">
+              <data dataname="Value" port="deltaL" idx="0"/>
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.000000"/>
+              <relative idx="10"/>
+            </movable>
+            <movable idx="12">
+              <data dataname="Value" port="carOff" idx="0"/>
+              <start x="-1.500000" y="-7.875000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="2.500000" y="8.875000"/>
+              <relative idx="5"/>
+            </movable>
+            <movable idx="13">
+              <data dataname="Value" port="deltaL" idx="0"/>
+              <start x="0.170000" y="1.000000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.500000" y="1.000000"/>
+              <relative idx="12"/>
+            </movable>
+            <movable idx="14">
+              <data dataname="Value" port="deltaR" idx="0"/>
+              <start x="3.830000" y="1.000000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.500000" y="1.000000"/>
+              <relative idx="12"/>
+            </movable>
+            <movable idx="15">
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="12"/>
+            </movable>
+            <movable idx="16">
+              <data dataname="Value" port="xCog" idx="0"/>
+              <data dataname="Value" port="yCog" idx="1"/>
+              <data dataname="Value" port="vehResizer" idx="2"/>
+              <data dataname="Value" port="bGResizer" idx="3"/>
+              <start x="-62.000000" y="330.000000" a="0.000000"/>
+              <movement x="-2.500000" y="0.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <movement x="0.000000" y="2.500000" divisor="" multiplier="" a="0.000000" idx="1"/>
+              <movement x="-1.000000" y="-1.000000" divisor="" multiplier="" a="0.000000" idx="2"/>
+              <movement x="1.000000" y="401.000000" divisor="" multiplier="" a="0.000000" idx="3"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="2" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.000000"/>
+              <relative idx="0"/>
+            </movable>
+          </animation>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="KinematicBicycleModel" displayname="Kinematic_Bicycle_Model_1">
+              <ports>
+                <port name="lr" autoplaced="false" x="0.9984" y="0.7114285714" a="0" enabled="true"/>
+                <port name="lx" autoplaced="false" x="0.9872" y="0.2957142857" a="0" enabled="true"/>
+              </ports>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="Kinematic_Bicycle_Model" cqstype="S" typename="KinematicBicycleModel" locked="false" subtypename="">
+        <parameters>
+          <parameter name="v#Value" type="double" unit="m/s" value="0"/>
+          <parameter name="delta#Value" type="double" unit="rad" value="0"/>
+          <parameter name="lr#Value" type="double" unit="m" value="1"/>
+          <parameter name="lx#Value" type="double" unit="m" value="0"/>
+          <parameter name="Vehicle" type="conditional" unit="" value="0"/>
+          <parameter name="Steering" type="conditional" unit="" value="0"/>
+          <parameter name="Background" type="conditional" unit="" value="0"/>
+          <parameter name="B" type="double" unit="m" value="2.75"/>
+          <parameter name="Lb" type="double" unit="m" value="160"/>
+          <parameter name="scaleV" type="double" unit="-" value="1"/>
+          <parameter name="scaleZ" type="double" unit="-" value="20"/>
+          <parameter name="xr#Value" type="double" unit="" value="0"/>
+          <parameter name="yr#Value" type="double" unit="" value="0"/>
+          <parameter name="psi#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="v" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="delta" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="lr" nodetype="NodeSignal"/>
+          <port name="lx" nodetype="NodeSignal"/>
+          <port name="xr" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="yr" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="psi" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="xCog" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="yCog" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="beta" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="deltaL" nodetype="NodeSignal"/>
+          <port name="deltaR" nodetype="NodeSignal"/>
+          <port name="vehResizer" nodetype="NodeSignal"/>
+          <port name="bGResizer" nodetype="NodeSignal"/>
+          <port name="ZResizer" nodetype="NodeSignal"/>
+          <port name="quarryOff" nodetype="NodeSignal"/>
+          <port name="plainOff" nodetype="NodeSignal"/>
+          <port name="sviestadOff" nodetype="NodeSignal"/>
+          <port name="bLOff" nodetype="NodeSignal"/>
+          <port name="bikeOff" nodetype="NodeSignal"/>
+          <port name="carOff" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1304.806238" y="2095.230657" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000">
+            <movable idx="0">
+              <data dataname="Value" port="ZResizer" idx="0"/>
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <movement x="62.000000" y="70.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="-1"/>
+            </movable>
+            <movable idx="1">
+              <data dataname="Value" port="bGResizer" idx="0"/>
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <movement x="62.000000" y="70.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="2">
+              <data dataname="Value" port="plainOff" idx="0"/>
+              <start x="-62.000000" y="-70.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="3">
+              <data dataname="Value" port="quarryOff" idx="0"/>
+              <start x="-62.000000" y="-70.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="4">
+              <data dataname="Value" port="sviestadOff" idx="0"/>
+              <start x="-62.000000" y="-670.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="5">
+              <data dataname="Value" port="xr" idx="0"/>
+              <data dataname="Value" port="yr" idx="1"/>
+              <data dataname="Value" port="psi" idx="2"/>
+              <data dataname="Value" port="bGResizer" idx="3"/>
+              <data dataname="Value" port="vehResizer" idx="4"/>
+              <start x="-62.000000" y="330.000000" a="0.000000"/>
+              <movement x="-2.500000" y="0.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <movement x="0.000000" y="2.500000" divisor="" multiplier="" a="0.000000" idx="1"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="2"/>
+              <movement x="1.000000" y="401.000000" divisor="" multiplier="" a="0.000000" idx="3"/>
+              <movement x="-1.000000" y="-1.000000" divisor="" multiplier="" a="0.000000" idx="4"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="4" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.000000"/>
+              <relative idx="0"/>
+            </movable>
+            <movable idx="6">
+              <data dataname="Value" port="bLOff" idx="0"/>
+              <start x="-4.000000" y="-11.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="5.000000" y="12.000000"/>
+              <relative idx="5"/>
+            </movable>
+            <movable idx="7">
+              <data dataname="Value" port="deltaL" idx="0"/>
+              <start x="1.500000" y="5.050000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.500000"/>
+              <relative idx="6"/>
+            </movable>
+            <movable idx="8">
+              <data dataname="Value" port="deltaR" idx="0"/>
+              <start x="6.500000" y="5.050000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.500000"/>
+              <relative idx="6"/>
+            </movable>
+            <movable idx="9">
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="6"/>
+            </movable>
+            <movable idx="10">
+              <data dataname="Value" port="bikeOff" idx="0"/>
+              <start x="0.000000" y="-5.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="6.000000"/>
+              <relative idx="5"/>
+            </movable>
+            <movable idx="11">
+              <data dataname="Value" port="deltaL" idx="0"/>
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.000000"/>
+              <relative idx="10"/>
+            </movable>
+            <movable idx="12">
+              <data dataname="Value" port="carOff" idx="0"/>
+              <start x="-1.500000" y="-7.875000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="2.500000" y="8.875000"/>
+              <relative idx="5"/>
+            </movable>
+            <movable idx="13">
+              <data dataname="Value" port="deltaL" idx="0"/>
+              <start x="0.170000" y="1.000000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.500000" y="1.000000"/>
+              <relative idx="12"/>
+            </movable>
+            <movable idx="14">
+              <data dataname="Value" port="deltaR" idx="0"/>
+              <start x="3.830000" y="1.000000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.500000" y="1.000000"/>
+              <relative idx="12"/>
+            </movable>
+            <movable idx="15">
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="12"/>
+            </movable>
+            <movable idx="16">
+              <data dataname="Value" port="xCog" idx="0"/>
+              <data dataname="Value" port="yCog" idx="1"/>
+              <data dataname="Value" port="vehResizer" idx="2"/>
+              <data dataname="Value" port="bGResizer" idx="3"/>
+              <start x="-62.000000" y="330.000000" a="0.000000"/>
+              <movement x="-2.500000" y="0.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <movement x="0.000000" y="2.500000" divisor="" multiplier="" a="0.000000" idx="1"/>
+              <movement x="-1.000000" y="-1.000000" divisor="" multiplier="" a="0.000000" idx="2"/>
+              <movement x="1.000000" y="401.000000" divisor="" multiplier="" a="0.000000" idx="3"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="2" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.000000"/>
+              <relative idx="0"/>
+            </movable>
+          </animation>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="KinematicBicycleModel" displayname="Kinematic_Bicycle_Model">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="Scope" cqstype="S" typename="SignalSink" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in_bottom#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadMultiportType" nodetype="NodeSignal"/>
+          <port name="in_bottom" porttype="ReadPortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1866.434736" y="2326.603401" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalSink" displayname="Scope">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="lr" cqstype="S" typename="SignalRamp" locked="false" subtypename="">
+        <parameters>
+          <parameter name="y_0#Value" type="double" unit="" value="0"/>
+          <parameter name="y_A#Value" type="double" unit="" value="1"/>
+          <parameter name="t_start#Value" type="double" unit="s" value="6"/>
+          <parameter name="t_end#Value" type="double" unit="s" value="7"/>
+        </parameters>
+        <ports>
+          <port name="y_0" nodetype="NodeSignal"/>
+          <port name="y_A" nodetype="NodeSignal"/>
+          <port name="t_start" nodetype="NodeSignal"/>
+          <port name="t_end" nodetype="NodeSignal"/>
+          <port name="out" signalquantity="Velocity" porttype="WritePortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1922.126861" y="2233.284713" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalRamp" displayname="lr">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="Scope_3" cqstype="S" typename="SignalSink" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in_bottom#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadMultiportType" nodetype="NodeSignal"/>
+          <port name="in_bottom" porttype="ReadPortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="2237.739161" y="2400.155714" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalSink" displayname="Scope_3">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="Scope_2" cqstype="S" typename="SignalSink" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in_bottom#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadMultiportType" nodetype="NodeSignal"/>
+          <port name="in_bottom" porttype="ReadPortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1961.278659" y="2327.774314" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalSink" displayname="Scope_2">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="kph2ms" cqstype="S" typename="SignalGain" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in#Value" type="double" unit="" value="0"/>
+          <parameter name="k#Value" type="double" unit="" value="1/3.6"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="k" nodetype="NodeSignal"/>
+          <port name="out" porttype="WritePortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1092.783576" y="2047.982768" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalGain" displayname="kph2ms">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="VehicleVelocity" cqstype="S" typename="SignalAnimationSlider" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in#Value" type="double" unit="" value="0"/>
+          <parameter name="out#Value" type="double" unit="" value="0"/>
+          <parameter name="min" type="double" unit="" value="-135"/>
+          <parameter name="max" type="double" unit="" value="135"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="out" porttype="WritePortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1011.468972" y="2083.501801" flipped="false" a="270"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000">
+            <movable idx="0">
+              <data dataname="Value" port="out" idx="0"/>
+              <start x="6.500000" y="49.500000" a="0.000000"/>
+              <movement x="0.000000" y="97.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="0.000000" y="0.000000" idx2="0" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="-1"/>
+              <adjustable ymax="97.000000" ymin="0.000000" dataname="Value" xmin="0.000000" ygain="0.010309" port="in" xgain="0.000000" xmax="0.000000"/>
+            </movable>
+          </animation>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalAnimationSlider" displayname="VehicleVelocity">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="vVeh" cqstype="S" typename="SignalRamp" locked="false" subtypename="">
+        <parameters>
+          <parameter name="y_0#Value" type="double" unit="" value="0"/>
+          <parameter name="y_A#Value" type="double" unit="" value="10"/>
+          <parameter name="t_start#Value" type="double" unit="s" value="1"/>
+          <parameter name="t_end#Value" type="double" unit="s" value="2"/>
+        </parameters>
+        <ports>
+          <port name="y_0" nodetype="NodeSignal"/>
+          <port name="y_A" nodetype="NodeSignal"/>
+          <port name="t_start" nodetype="NodeSignal"/>
+          <port name="t_end" nodetype="NodeSignal"/>
+          <port name="out" signalquantity="Velocity" porttype="WritePortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1611.175782" y="2060.806233" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalRamp" displayname="vVeh">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="lx" cqstype="S" typename="SignalRamp" locked="false" subtypename="">
+        <parameters>
+          <parameter name="y_0#Value" type="double" unit="" value="0"/>
+          <parameter name="y_A#Value" type="double" unit="" value="1"/>
+          <parameter name="t_start#Value" type="double" unit="s" value="4"/>
+          <parameter name="t_end#Value" type="double" unit="s" value="5"/>
+        </parameters>
+        <ports>
+          <port name="y_0" nodetype="NodeSignal"/>
+          <port name="y_A" nodetype="NodeSignal"/>
+          <port name="t_start" nodetype="NodeSignal"/>
+          <port name="t_end" nodetype="NodeSignal"/>
+          <port name="out" signalquantity="Velocity" porttype="WritePortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1925.875814" y="2141.1247" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalRamp" displayname="lx">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="rad2deg" cqstype="S" typename="SignalGain" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in#Value" type="double" unit="" value="0"/>
+          <parameter name="k#Value" type="double" unit="" value="3.1415/180"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="k" nodetype="NodeSignal"/>
+          <port name="out" porttype="WritePortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1106.69844" y="1937.050845" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalGain" displayname="rad2deg">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="kph" cqstype="C" typename="SignalDisplay" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadPortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1013.083428" y="2025.057508" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalDisplay" displayname="kph">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="SteerAngle" cqstype="S" typename="SignalAnimationSlider" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in#Value" type="double" unit="" value="0"/>
+          <parameter name="out#Value" type="double" unit="" value="0"/>
+          <parameter name="min" type="double" unit="" value="-60"/>
+          <parameter name="max" type="double" unit="" value="60"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="out" porttype="WritePortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1018.517346" y="1938.786789" flipped="false" a="90"/>
+          <nametext position="1" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000">
+            <movable idx="0">
+              <data dataname="Value" port="out" idx="0"/>
+              <start x="6.500000" y="49.430000" a="0.000000"/>
+              <movement x="0.000000" y="97.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="0.000000" y="0.000000" idx2="0" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="-1"/>
+              <adjustable ymax="97.000000" ymin="0.000000" dataname="Value" xmin="0.000000" ygain="0.010309" port="in" xgain="0.000000" xmax="0.000000"/>
+            </movable>
+          </animation>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalAnimationSlider" displayname="SteerAngle">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="Scope_5" cqstype="S" typename="SignalSink" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in_bottom#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadMultiportType" nodetype="NodeSignal"/>
+          <port name="in_bottom" porttype="ReadPortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="2428.442002" y="2302.36144" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalSink" displayname="Scope_5">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="delta" cqstype="S" typename="SignalRamp" locked="false" subtypename="">
+        <parameters>
+          <parameter name="y_0#Value" type="double" unit="" value="0"/>
+          <parameter name="y_A#Value" type="double" unit="" value="-45*3.1415/180"/>
+          <parameter name="t_start#Value" type="double" unit="s" value="2"/>
+          <parameter name="t_end#Value" type="double" unit="s" value="3"/>
+        </parameters>
+        <ports>
+          <port name="y_0" nodetype="NodeSignal"/>
+          <port name="y_A" nodetype="NodeSignal"/>
+          <port name="t_start" nodetype="NodeSignal"/>
+          <port name="t_end" nodetype="NodeSignal"/>
+          <port name="out" signalquantity="Angle" porttype="WritePortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1608.833957" y="1991.722388" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalRamp" displayname="delta">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="Kinematic_Bicycle_Model_2" cqstype="S" typename="KinematicBicycleModel" locked="false" subtypename="">
+        <parameters>
+          <parameter name="v#Value" type="double" unit="m/s" value="0"/>
+          <parameter name="delta#Value" type="double" unit="rad" value="0"/>
+          <parameter name="lr#Value" type="double" unit="m" value="1"/>
+          <parameter name="lx#Value" type="double" unit="m" value="0"/>
+          <parameter name="Vehicle" type="conditional" unit="" value="2"/>
+          <parameter name="Steering" type="conditional" unit="" value="0"/>
+          <parameter name="Background" type="conditional" unit="" value="2"/>
+          <parameter name="B" type="double" unit="m" value="2.18"/>
+          <parameter name="Lb" type="double" unit="m" value="160"/>
+          <parameter name="scaleV" type="double" unit="-" value="1"/>
+          <parameter name="scaleZ" type="double" unit="-" value="1"/>
+          <parameter name="xr#Value" type="double" unit="" value="80"/>
+          <parameter name="yr#Value" type="double" unit="" value="10"/>
+          <parameter name="psi#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="v" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="delta" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="lr" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="lx" porttype="ReadPortType" nodetype="NodeSignal"/>
+          <port name="xr" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="yr" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="psi" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="xCog" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="yCog" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="beta" porttype="WritePortType" nodetype="NodeSignal"/>
+          <port name="deltaL" nodetype="NodeSignal"/>
+          <port name="deltaR" nodetype="NodeSignal"/>
+          <port name="vehResizer" nodetype="NodeSignal"/>
+          <port name="bGResizer" nodetype="NodeSignal"/>
+          <port name="ZResizer" nodetype="NodeSignal"/>
+          <port name="quarryOff" nodetype="NodeSignal"/>
+          <port name="plainOff" nodetype="NodeSignal"/>
+          <port name="sviestadOff" nodetype="NodeSignal"/>
+          <port name="bLOff" nodetype="NodeSignal"/>
+          <port name="bikeOff" nodetype="NodeSignal"/>
+          <port name="carOff" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="2237.380127" y="2205.99869" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000">
+            <movable idx="0">
+              <data dataname="Value" port="ZResizer" idx="0"/>
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <movement x="62.000000" y="70.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="-1"/>
+            </movable>
+            <movable idx="1">
+              <data dataname="Value" port="bGResizer" idx="0"/>
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <movement x="62.000000" y="70.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="0"/>
+            </movable>
+            <movable idx="2">
+              <data dataname="Value" port="plainOff" idx="0"/>
+              <start x="-62.000000" y="-70.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="3">
+              <data dataname="Value" port="quarryOff" idx="0"/>
+              <start x="-62.000000" y="-70.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="4">
+              <data dataname="Value" port="sviestadOff" idx="0"/>
+              <start x="-62.000000" y="-670.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="1"/>
+            </movable>
+            <movable idx="5">
+              <data dataname="Value" port="xr" idx="0"/>
+              <data dataname="Value" port="yr" idx="1"/>
+              <data dataname="Value" port="psi" idx="2"/>
+              <data dataname="Value" port="bGResizer" idx="3"/>
+              <data dataname="Value" port="vehResizer" idx="4"/>
+              <start x="-62.000000" y="330.000000" a="0.000000"/>
+              <movement x="-2.500000" y="0.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <movement x="0.000000" y="2.500000" divisor="" multiplier="" a="0.000000" idx="1"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="2"/>
+              <movement x="1.000000" y="401.000000" divisor="" multiplier="" a="0.000000" idx="3"/>
+              <movement x="-1.000000" y="-1.000000" divisor="" multiplier="" a="0.000000" idx="4"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="4" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.000000"/>
+              <relative idx="0"/>
+            </movable>
+            <movable idx="6">
+              <data dataname="Value" port="bLOff" idx="0"/>
+              <start x="-4.000000" y="-11.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="5.000000" y="12.000000"/>
+              <relative idx="5"/>
+            </movable>
+            <movable idx="7">
+              <data dataname="Value" port="deltaL" idx="0"/>
+              <start x="1.500000" y="5.050000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.500000"/>
+              <relative idx="6"/>
+            </movable>
+            <movable idx="8">
+              <data dataname="Value" port="deltaR" idx="0"/>
+              <start x="6.500000" y="5.050000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.500000"/>
+              <relative idx="6"/>
+            </movable>
+            <movable idx="9">
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="6"/>
+            </movable>
+            <movable idx="10">
+              <data dataname="Value" port="bikeOff" idx="0"/>
+              <start x="0.000000" y="-5.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="6.000000"/>
+              <relative idx="5"/>
+            </movable>
+            <movable idx="11">
+              <data dataname="Value" port="deltaL" idx="0"/>
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.000000"/>
+              <relative idx="10"/>
+            </movable>
+            <movable idx="12">
+              <data dataname="Value" port="carOff" idx="0"/>
+              <start x="-1.500000" y="-7.875000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="0" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="2.500000" y="8.875000"/>
+              <relative idx="5"/>
+            </movable>
+            <movable idx="13">
+              <data dataname="Value" port="deltaL" idx="0"/>
+              <start x="0.170000" y="1.000000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.500000" y="1.000000"/>
+              <relative idx="12"/>
+            </movable>
+            <movable idx="14">
+              <data dataname="Value" port="deltaR" idx="0"/>
+              <start x="3.830000" y="1.000000" a="0.000000"/>
+              <movement x="0.000000" y="0.000000" divisor="" multiplier="" a="57.300000" idx="0"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.500000" y="1.000000"/>
+              <relative idx="12"/>
+            </movable>
+            <movable idx="15">
+              <start x="0.000000" y="0.000000" a="0.000000"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="0.000000" y="0.000000"/>
+              <relative idx="12"/>
+            </movable>
+            <movable idx="16">
+              <data dataname="Value" port="xCog" idx="0"/>
+              <data dataname="Value" port="yCog" idx="1"/>
+              <data dataname="Value" port="vehResizer" idx="2"/>
+              <data dataname="Value" port="bGResizer" idx="3"/>
+              <start x="-62.000000" y="330.000000" a="0.000000"/>
+              <movement x="-2.500000" y="0.000000" divisor="" multiplier="" a="0.000000" idx="0"/>
+              <movement x="0.000000" y="2.500000" divisor="" multiplier="" a="0.000000" idx="1"/>
+              <movement x="-1.000000" y="-1.000000" divisor="" multiplier="" a="0.000000" idx="2"/>
+              <movement x="1.000000" y="401.000000" divisor="" multiplier="" a="0.000000" idx="3"/>
+              <initscale x="1.000000" y="1.000000"/>
+              <resize x="1.000000" y="1.000000" idx2="-1" idx1="2" divisor="" multiplier=""/>
+              <initcolor r="0.000000" b="0.000000" a="0.000000" g="0.000000"/>
+              <color r="0.000000" b="0.000000" divisor="" multiplier="" a="0.000000" g="0.000000" idx="0"/>
+              <transformorigin x="1.000000" y="1.000000"/>
+              <relative idx="0"/>
+            </movable>
+          </animation>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="KinematicBicycleModel" displayname="Kinematic_Bicycle_Model_2">
+              <ports>
+                <port name="lr" autoplaced="false" x="0.0432" y="0.5042857143" a="180" enabled="true"/>
+                <port name="lx" autoplaced="false" x="0.0048" y="0.1257142857" a="180" enabled="true"/>
+              </ports>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component disabled="false" name="Degrees" cqstype="C" typename="SignalDisplay" locked="false" subtypename="">
+        <parameters>
+          <parameter name="in#Value" type="double" unit="" value="0"/>
+        </parameters>
+        <ports>
+          <port name="in" porttype="ReadPortType" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="1006.881725" y="1897.599467" flipped="false" a="0"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalDisplay" displayname="Degrees">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+    </objects>
+    <connections>
+      <connect startcomponent="kph2ms" endport="out" startport="in" endcomponent="VehicleVelocity">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1080.28357600000003913010" y="2047.98276800000030561932"/>
+            <coordinate x="1037.00123101531607971992" y="2047.98276800000030561932"/>
+            <coordinate x="1037.00123101531607971992" y="2068.50180099999988669879"/>
+            <coordinate x="1011.46897199999989425123" y="2068.50180099999988669879"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="SteerAngle" endport="in" startport="out" endcomponent="rad2deg">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1018.51734599999986130570" y="1953.78678899999999885040"/>
+            <coordinate x="1062.12082696459037833847" y="1953.78678899999999885040"/>
+            <coordinate x="1062.12082696459037833847" y="1937.05084499999998115527"/>
+            <coordinate x="1094.19843999999989136995" y="1937.05084499999998115527"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="kph" endport="out" startport="in" endcomponent="VehicleVelocity">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="969.08342800000013994577" y="2025.05750800000009803625"/>
+            <coordinate x="1011.46897199999989425123" y="2025.05750800000009803625"/>
+            <coordinate x="1011.46897199999989425123" y="2068.50180099999988669879"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Degrees" endport="out" startport="in" endcomponent="SteerAngle">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="962.88172499999996034603" y="1897.59946700000000419095"/>
+            <coordinate x="1018.51734599999986130570" y="1897.59946700000000419095"/>
+            <coordinate x="1018.51734599999986130570" y="1953.78678899999999885040"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model" endport="out" startport="delta" endcomponent="rad2deg">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1336.05623799999989387288" y="2025.23065700000006472692"/>
+            <coordinate x="1336.05623799999989387288" y="1937.05084499999998115527"/>
+            <coordinate x="1119.19843999999989136995" y="1937.05084499999998115527"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="kph2ms" endport="v" startport="out" endcomponent="Kinematic_Bicycle_Model">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1105.28357600000003913010" y="2047.98276800000030561932"/>
+            <coordinate x="1136.48758010284950614732" y="2047.98276800000030561932"/>
+            <coordinate x="1136.48758010284950614732" y="1982.12051885236292037007"/>
+            <coordinate x="1273.55623799999989387288" y="1982.12051885236292037007"/>
+            <coordinate x="1273.55623799999989387288" y="2025.23065700000006472692"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_1" endport="out" startport="v" endcomponent="vVeh">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1777.16566400000010617077" y="2111.40981000000010681106"/>
+            <coordinate x="1777.16566400000010617077" y="2060.80623299999979280983"/>
+            <coordinate x="1623.67578200000002652814" y="2060.80623299999979280983"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="delta" endport="delta" startport="out" endcomponent="Kinematic_Bicycle_Model_1">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1621.33395700000005490438" y="1991.72238799999990987999"/>
+            <coordinate x="1839.66566400000010617077" y="1991.72238799999990987999"/>
+            <coordinate x="1839.66566400000010617077" y="2111.40981000000010681106"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="lx" endport="lx" startport="out" endcomponent="Kinematic_Bicycle_Model_1">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1938.37581399999999121064" y="2141.12469999999984793249"/>
+            <coordinate x="1952.49643501081959584553" y="2141.12469999999984793249"/>
+            <coordinate x="1952.49643501081959584553" y="2152.80980999800021891133"/>
+            <coordinate x="1869.31566400000019712024" y="2152.80980999800021891133"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="lr" endport="lr" startport="out" endcomponent="Kinematic_Bicycle_Model_1">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1934.62686099999996258703" y="2233.28471300000001065200"/>
+            <coordinate x="1945.76368868319605098804" y="2233.28471300000001065200"/>
+            <coordinate x="1945.76368868319605098804" y="2211.00980999600005816319"/>
+            <coordinate x="1870.71566400000006069604" y="2211.00980999600005816319"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_1" endport="in_bottom" startport="xr" endcomponent="Scope_1">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1764.66566400000010617077" y="2251.40981000000010681106"/>
+            <coordinate x="1764.66566400000010617077" y="2488.42304268965153823956"/>
+            <coordinate x="1874.63112399999999979627" y="2488.42304268965153823956"/>
+            <coordinate x="1874.63112399999999979627" y="2434.10549799999989772914"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_1" endport="in" startport="yr" endcomponent="Scope_1">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1783.41566400000010617077" y="2251.40981000000010681106"/>
+            <coordinate x="1783.41566400000010617077" y="2419.10549799999989772914"/>
+            <coordinate x="1854.63112399999999979627" y="2419.10549799999989772914"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_1" endport="in" startport="psi" endcomponent="Scope_2">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1802.16566400000010617077" y="2251.40981000000010681106"/>
+            <coordinate x="1802.16566400000010617077" y="2379.35255218215024797246"/>
+            <coordinate x="1920.17925263822667147906" y="2379.35255218215024797246"/>
+            <coordinate x="1920.17925263822667147906" y="2327.77431399999977656989"/>
+            <coordinate x="1941.27865900000006149639" y="2327.77431399999977656989"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_1" endport="in" startport="beta" endcomponent="Scope_2">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1858.41566400000010617077" y="2251.40981000000010681106"/>
+            <coordinate x="1858.41566400000010617077" y="2290.48030065751981965150"/>
+            <coordinate x="1912.09995704507832670060" y="2290.48030065751981965150"/>
+            <coordinate x="1912.09995704507832670060" y="2327.77431399999977656989"/>
+            <coordinate x="1941.27865900000006149639" y="2327.77431399999977656989"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_1" endport="in_bottom" startport="xCog" endcomponent="Scope">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1820.91566400000010617077" y="2251.40981000000010681106"/>
+            <coordinate x="1820.91566400000010617077" y="2364.54051026137858571019"/>
+            <coordinate x="1866.43473599999992984522" y="2364.54051026137858571019"/>
+            <coordinate x="1866.43473599999992984522" y="2341.60340099999984886381"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_1" endport="in" startport="yCog" endcomponent="Scope">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1839.66566400000010617077" y="2251.40981000000010681106"/>
+            <coordinate x="1839.66566400000010617077" y="2326.60340099999984886381"/>
+            <coordinate x="1846.43473599999992984522" y="2326.60340099999984886381"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="lx" endport="lx" startport="out" endcomponent="Kinematic_Bicycle_Model_2">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1938.37581399999999121064" y="2141.12469999999984793249"/>
+            <coordinate x="2044.60028854252846031159" y="2141.12469999999984793249"/>
+            <coordinate x="2044.60028854252846031159" y="2153.59868955849515259615"/>
+            <coordinate x="2175.48012717382562186685" y="2153.59868955849515259615"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="lr" endport="lr" startport="out" endcomponent="Kinematic_Bicycle_Model_2">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1934.62686099999996258703" y="2233.28471300000001065200"/>
+            <coordinate x="2125.11422114736433286453" y="2233.28471300000001065200"/>
+            <coordinate x="2125.11422114736433286453" y="2206.59868955849515259615"/>
+            <coordinate x="2180.28012717382580376579" y="2206.59868955849515259615"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="vVeh" endport="v" startport="out" endcomponent="Kinematic_Bicycle_Model_2">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1623.67578200000002652814" y="2060.80623299999979280983"/>
+            <coordinate x="2206.13012717382571281632" y="2060.80623299999979280983"/>
+            <coordinate x="2206.13012717382571281632" y="2135.99868955849524354562"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="delta" endport="delta" startport="out" endcomponent="Kinematic_Bicycle_Model_2">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="1621.33395700000005490438" y="1991.72238799999990987999"/>
+            <coordinate x="2268.63012717382571281632" y="1991.72238799999990987999"/>
+            <coordinate x="2268.63012717382571281632" y="2135.99868955849524354562"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_2" endport="in_bottom" startport="xr" endcomponent="Scope_3">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2193.63012717382571281632" y="2275.99868955849524354562"/>
+            <coordinate x="2193.63012717382571281632" y="2438.09795916053008113522"/>
+            <coordinate x="2237.73916099999996731640" y="2438.09795916053008113522"/>
+            <coordinate x="2237.73916099999996731640" y="2415.15571399999998902786"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_2" endport="in" startport="yr" endcomponent="Scope_3">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2212.38012717382571281632" y="2275.99868955849524354562"/>
+            <coordinate x="2212.38012717382571281632" y="2400.15571399999998902786"/>
+            <coordinate x="2217.73916099999996731640" y="2400.15571399999998902786"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_2" endport="in_bottom" startport="xCog" endcomponent="Scope_4">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2249.88012717382571281632" y="2275.99868955849524354562"/>
+            <coordinate x="2249.88012717382571281632" y="2349.64603320028754751547"/>
+            <coordinate x="2324.10351799999989452772" y="2349.64603320028754751547"/>
+            <coordinate x="2324.10351799999989452772" y="2340.39253899999994246173"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_2" endport="in" startport="yCog" endcomponent="Scope_4">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2268.63012717382571281632" y="2275.99868955849524354562"/>
+            <coordinate x="2268.63012717382571281632" y="2325.39253899999994246173"/>
+            <coordinate x="2304.10351799999989452772" y="2325.39253899999994246173"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_2" endport="in" startport="psi" endcomponent="Scope_5">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2231.13012717382571281632" y="2275.99868955849524354562"/>
+            <coordinate x="2231.13012717382571281632" y="2370.05801611418974061962"/>
+            <coordinate x="2371.19201516496241310961" y="2370.05801611418974061962"/>
+            <coordinate x="2371.19201516496241310961" y="2302.36144030463356102700"/>
+            <coordinate x="2408.44200215231694528484" y="2302.36144030463356102700"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect startcomponent="Kinematic_Bicycle_Model_2" endport="in" startport="beta" endcomponent="Scope_5">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2287.38012717382571281632" y="2275.99868955849524354562"/>
+            <coordinate x="2287.38012717382571281632" y="2302.36144030463356102700"/>
+            <coordinate x="2408.44200215231694528484" y="2302.36144030463356102700"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+    </connections>
+  </system>
+</hopsanmodelfile>

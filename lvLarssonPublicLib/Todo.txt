@@ -1,0 +1,18 @@
+General:
+- Move to debLibrary repo
+	pitchIndicator:
+
+	bankIndicator:
+		- Add control surfaces
+		- Add landing gear documentation
+
+	attitudeIndicator
+		- Add CL indicator
+			- Scale to the right
+			- Show numerical value -1 ->+4
+			- Logaritmic scale?
+
+	kinBicModel:
+		- Change to "indicator" for show and not show images
+		- Redo scaling properties etc (?)
+	
