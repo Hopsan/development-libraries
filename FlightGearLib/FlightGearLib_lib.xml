@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsancomponentlibrary version="0.3">
+  <id>1d69ebd8-6371-4be7-b726-8ac9e8739220</id>
+  <name>FlightGearLib</name>
+  <lib debug_ext="_d">FlightGearLib</lib>
+  <buildflags>
+
+    <lflags os="win">-lws2_32</lflags>
+  </buildflags>
+
+
+
+  <source>FlightGearLib.cpp</source>
+
+
+  <component>FlightGearPositionOrientation.hpp</component>
+  <component>FlightGearWeather.hpp</component>
+
+  <componentxml>FlightGearPositionOrientation.xml</componentxml>
+  <componentxml>FlightGearWeather.xml</componentxml>
+
+
+</hopsancomponentlibrary>
