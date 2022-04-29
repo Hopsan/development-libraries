@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject recompilable="true" displayname="FlightGearPositionOrientation" typename="FlightGearPositionOrientation" sourcecode="FlightGearPositionOrientation.hpp" libpath="">
+    <icons>
+        <icon scale="1" path="FlightGearPositionOrientation.svg" iconrotation="ON" type="user"/>
+    </icons>
+    <ports>
+      <port y="0" name="altitude" x="0.8" a="270"/>
+      <port y="0" name="latitude" x="0.2" a="270"/>
+      <port y="0" name="longitude" x="0.5" a="270"/>
+      <port y="0.1" name="roll" x="0" a="180"/>
+      <port y="0.5" name="pitch" x="0" a="180"/>
+      <port y="0.9" name="heading" x="0" a="180"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>

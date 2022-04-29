@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject recompilable="true" displayname="FlightGearWeather" typename="FlightGearWeather" sourcecode="FlightGearWeather.hpp" libpath="">
+    <icons>
+        <icon scale="1" path="FlightGearWeather.svg" iconrotation="ON" type="user"/>
+    </icons>
+    <ports>
+      <port y="0.2" name="windheading" x="1" a="0"/>
+      <port y="0.8" name="windspeed" x="1" a="0"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>
