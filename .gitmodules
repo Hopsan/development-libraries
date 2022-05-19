@@ -1,0 +1,3 @@
+[submodule "Noise/libs/OpenSimplexNoise"]
+	path = Noise/libs/OpenSimplexNoise
+	url = https://github.com/deerel/OpenSimplexNoise
