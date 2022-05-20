@@ -62,7 +62,7 @@ namespace hopsan {
         void configure() {
             //Register constants
             addConstant("scale", "", "", 1, mscale);
-            addConstant("Seed", "", "", 0, mSeed);
+//            addConstant("Seed", "", "", 0, mSeed);
             addConstant("Offset_x", "", "", 0, mOffX);
             addConstant("Offset_y", "", "", 0, mOffY);
             addConstant("Heading", "Angle (deg) at which to traverse a 3d Simplex field: 0 East, 90 North.", "deg", 0,mHeading);

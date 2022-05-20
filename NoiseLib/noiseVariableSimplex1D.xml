@@ -7,6 +7,7 @@
     <ports>
       <port name="X" a="180" y="0.5" x="0"/>
       <port name="Signal" a="0" y="0.5" x="1"/>
+      <port x="0.5" y="1" name="Seed" a="90"/>
     </ports>
   </modelobject>
 </hopsanobjectappearance>

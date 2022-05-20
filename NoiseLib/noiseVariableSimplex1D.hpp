@@ -42,6 +42,7 @@ namespace hopsan {
     private:                         // Private section
         //Declare local variables
         double mSeed;
+        double *mpSeed;
         double X;
 
         double mHeading;
@@ -65,7 +66,7 @@ namespace hopsan {
         void configure()
         {
             //Register constants
-            addConstant("Seed", "", "", 0, mSeed);
+            addInputVariable("Seed", "", "", 0, &mpSeed);
 
             //Add ports
             addInputVariable("X", "", "", 0, &mpX);

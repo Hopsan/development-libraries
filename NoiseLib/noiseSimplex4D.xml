@@ -10,6 +10,7 @@
       <port name="Z" a="180" y="0.6" x="0"/>
       <port name="W" a="180" y="0.8" x="0"/>
       <port name="Signal" a="0" y="0.5" x="1"/>
+      <port x="0.5" y="1" name="Seed" a="90"/>
     </ports>
   </modelobject>
 </hopsanobjectappearance>
