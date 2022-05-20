@@ -47,6 +47,7 @@ namespace hopsan {
         //Declare data pointer variables
         double *mpSignal;
         double mSeed;
+        double *mpSeed;
         double mHeading;
 
         //Declare ports
@@ -64,8 +65,8 @@ namespace hopsan {
             addConstant("Seed", "", "", 0, mSeed);
             addConstant("Offset_x", "", "", 0, mOffX);
             addConstant("Offset_y", "", "", 0, mOffY);
-            addConstant("Seed", "", "", 0, mSeed);
             addConstant("Heading", "Angle (deg) at which to traverse a 3d Simplex field: 0 East, 90 North.", "deg", 0,mHeading);
+            addInputVariable("Seed", "", "", 0, &mpSeed);
 
             //Add ports
             addOutputVariable("Signal", "", "", 0, &mpSignal);
@@ -77,7 +78,7 @@ namespace hopsan {
         //Initialize
         void initialize() {
             //Initialize variables
-            mNoise = new OpenSimplexNoise::Noise(mSeed);
+            mNoise = new OpenSimplexNoise::Noise(*mpSeed);
             mHeading = deg2rad(mHeading);
             //Get data pointers
 
