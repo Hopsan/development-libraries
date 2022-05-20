@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject typename="noiseSeed" libpath="" sourcecode="noiseSeed.hpp" recompilable="true" displayname="Random Seed">
+    <icons>
+      <icon scale="1" path="noiseSeed.svg" iconrotation="OFF" type="iso"/>
+    </icons>
+    <ports>
+      <port a="0" x="1" name="Seed" y="0.5"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>

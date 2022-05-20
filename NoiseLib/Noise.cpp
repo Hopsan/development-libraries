@@ -3,7 +3,8 @@
 #include "noiseSimplex1D.hpp"
 #include "noiseSimplex4D.hpp"
 #include "noiseVariableSimplex1D.hpp"
-#include "libs/OpenSimplexNoise/OpenSimplexNoise/OpenSimplexNoise.h"
+#include "noiseSeed.hpp"
+
 using namespace hopsan;
 
 extern "C" DLLEXPORT void register_contents(ComponentFactory* pComponentFactory, NodeFactory* pNodeFactory)
@@ -12,6 +13,7 @@ extern "C" DLLEXPORT void register_contents(ComponentFactory* pComponentFactory,
     pComponentFactory->registerCreatorFunction("noiseSimplex1D", noiseSimplex1D::Creator);
     pComponentFactory->registerCreatorFunction("noiseSimplex4D", noiseSimplex4D::Creator);
     pComponentFactory->registerCreatorFunction("noiseVariableSimplex1D", noiseVariableSimplex1D::Creator);
+    pComponentFactory->registerCreatorFunction("noiseSeed", noiseSeed::Creator);
 
     //Register custom nodes (if any)
     HOPSAN_UNUSED(pNodeFactory);

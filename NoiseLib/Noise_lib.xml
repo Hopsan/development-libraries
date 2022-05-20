@@ -17,10 +17,12 @@
   <component>noiseSimplex1D.hpp</component>
   <component>noiseSimplex4D.hpp</component>
   <component>noiseVariableSimplex1D.hpp</component>
+  <component>noiseSeed.hpp</component>
 
   <componentxml>noiseSimplex1D.xml</componentxml>
   <componentxml>noiseSimplex4D.xml</componentxml>
   <componentxml>noiseVariableSimplex1D.xml</componentxml>
+  <componentxml>noiseSeed.xml</componentxml>
 
 
 </hopsancomponentlibrary>
