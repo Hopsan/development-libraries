@@ -4,6 +4,11 @@
     <icons>
       <icon scale="1" path="noiseSimplex4D.svg" iconrotation="OFF" type="iso"/>
     </icons>
+    <help>
+
+      <text></text>
+      <md>noiseSimplex4D.md</md>
+    </help>
     <ports>
       <port name="X" a="180" y="0.2" x="0"/>
       <port name="Y" a="180" y="0.4" x="0"/>

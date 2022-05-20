@@ -41,7 +41,7 @@ namespace hopsan {
     {
     private:                         // Private section
         //Declare local variables
-        double mSeed;
+//        double mSeed;
         double X;
         double Y;
         double Z;
@@ -49,7 +49,7 @@ namespace hopsan {
         double Signal;
         OpenSimplexNoise::Noise *mNoise;
         //Declare data pointer variables
-        double *mpX, *mpY, *mpZ, *mpW, *mpSignal;
+        double *mpX, *mpY, *mpZ, *mpW, *mpSignal, *mpSeed;
 
         //Declare ports
         
@@ -64,7 +64,7 @@ namespace hopsan {
         void configure()
         {
             //Register constants
-            addConstant("Seed", "", "", 0, mSeed);
+            addInputVariable("Seed", "", "", 0, &mpSeed);
 
             //Add ports
             addInputVariable("X", "", "", 0, &mpX);
@@ -95,7 +95,7 @@ namespace hopsan {
             Signal = (*mpSignal);
 
             //Initialization code
-            mNoise = new OpenSimplexNoise::Noise(mSeed);
+            mNoise = new OpenSimplexNoise::Noise(*mpSeed);
 
             //Write output variables
             (*mpSignal) = mNoise->eval(X, Y,Z,W);

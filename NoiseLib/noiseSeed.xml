@@ -4,6 +4,11 @@
     <icons>
       <icon scale="1" path="noiseSeed.svg" iconrotation="OFF" type="iso"/>
     </icons>
+    <help>
+
+      <text></text>
+      <md>noiseSeed.md</md>
+    </help>
     <ports>
       <port a="0" x="1" name="Seed" y="0.5"/>
     </ports>

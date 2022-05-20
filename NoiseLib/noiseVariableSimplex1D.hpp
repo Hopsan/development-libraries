@@ -67,6 +67,7 @@ namespace hopsan {
         {
             //Register constants
             addInputVariable("Seed", "", "", 0, &mpSeed);
+            addConstant("Heading", "", "", 0, mHeading);
 
             //Add ports
             addInputVariable("X", "", "", 0, &mpX);
@@ -83,7 +84,7 @@ namespace hopsan {
             
 
             //Get data pointers
-            mNoise = new OpenSimplexNoise::Noise(mSeed);
+            mNoise = new OpenSimplexNoise::Noise(*mpSeed);
 
             mHeading = deg2rad(mHeading);
 
