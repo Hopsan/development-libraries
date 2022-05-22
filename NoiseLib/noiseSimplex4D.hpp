@@ -25,7 +25,7 @@
 #ifndef NOISESIMPLEX4D_HPP_INCLUDED
 #define NOISESIMPLEX4D_HPP_INCLUDED
 
-#include <math.h>
+#include <cmath>
 #include "ComponentEssentials.h"
 #include "ComponentUtilities.h"
 #include <sstream>
@@ -33,12 +33,12 @@
 #include <vector>
 #include <string>
 #include "libs/OpenSimplexNoise/OpenSimplexNoise/OpenSimplexNoise.h"
+
 using namespace std;
 
 namespace hopsan {
 
-    class noiseSimplex4D : public ComponentSignal
-    {
+    class noiseSimplex4D : public ComponentSignal {
     private:                         // Private section
         //Declare local variables
 //        double mSeed;
@@ -46,23 +46,20 @@ namespace hopsan {
         double Y;
         double Z;
         double W;
-        double Signal;
         OpenSimplexNoise::Noise *mNoise;
         //Declare data pointer variables
         double *mpX, *mpY, *mpZ, *mpW, *mpSignal, *mpSeed;
 
         //Declare ports
-        
+
 
     public:                              //Public section
-        static Component *Creator()
-        {
+        static Component *Creator() {
             return new noiseSimplex4D();
         }
-        
+
         //Configure
-        void configure()
-        {
+        void configure() override {
             //Register constants
             addInputVariable("Seed", "", "", 0, &mpSeed);
 
@@ -76,15 +73,14 @@ namespace hopsan {
 
 
         }
-        
+
         //Initialize
-        void initialize()
-        {
+        void initialize() override {
             //Initialize variables
-            
+
 
             //Get data pointers
-            
+
 
             //Read input variables
             X = (*mpX);
@@ -92,18 +88,15 @@ namespace hopsan {
             Z = (*mpZ);
             W = (*mpW);
 
-            Signal = (*mpSignal);
-
             //Initialization code
-            mNoise = new OpenSimplexNoise::Noise(*mpSeed);
+            mNoise = new OpenSimplexNoise::Noise(lround(*mpSeed));
 
             //Write output variables
-            (*mpSignal) = mNoise->eval(X, Y,Z,W);
+            (*mpSignal) = mNoise->eval(X, Y, Z, W);
         }
 
         //Simulate one time step
-        void simulateOneTimestep()
-        {
+        void simulateOneTimestep() override {
             //Read input variables
             X = (*mpX);
             Y = (*mpY);
@@ -112,30 +105,28 @@ namespace hopsan {
 //            Signal = (*mpSignal);
 
             //Simulation code
-            
+
 
             //Write output variables
-            (*mpSignal) = mNoise->eval(X, Y,Z,W);;
+            (*mpSignal) = mNoise->eval(X, Y, Z, W);
         }
 
         //Finalize
-        void finalize()
-        {
+        void finalize() override {
             //Finalize code
             delete mNoise;
-            
+
         }
 
         //Finalize
-        void deconfigure()
-        {
+        void deconfigure() override {
             //Deconfigure code
 
-            
+
         }
 
         //Auxiliary functions
-        
+
     };
 }
 

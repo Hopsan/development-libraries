@@ -21,11 +21,22 @@
  the Hopsan source code root directory.
 
 -----------------------------------------------------------------------------*/
+/*
+ * Components for various types of noise and randomness.
+ *
+ *
+ * @file   noiseSeed.hpp
+ * @author Lönja Selter <Loenja@Selter.co.uk>
+ * @date   2022-05-22
+ *
+ * @brief
+ *
+*/
 
 #ifndef NOISESEED_HPP_INCLUDED
 #define NOISESEED_HPP_INCLUDED
 
-#include <math.h>
+#include <cmath>
 #include "ComponentEssentials.h"
 #include "ComponentUtilities.h"
 #include <sstream>
@@ -43,7 +54,6 @@ namespace hopsan {
     {
     private:                         // Private section
         //Declare local variables
-        double Seed;
 
         //Declare data pointer variables
         double *mpSeed;
@@ -58,7 +68,7 @@ namespace hopsan {
         }
         
         //Configure
-        void configure()
+        void configure() override
         {
             //Register constants
 
@@ -72,7 +82,7 @@ namespace hopsan {
         }
         
         //Initialize
-        void initialize()
+        void initialize() override
         {
             //Initialize variables
 
@@ -81,7 +91,7 @@ namespace hopsan {
             
 
             //Read input variables
-            Seed = (*mpSeed);
+//            Seed = (*mpSeed);
 
             //Initialization code
             std::mt19937 gen (std::time(NULL));
@@ -92,7 +102,7 @@ namespace hopsan {
         }
 
         //Simulate one time step
-        void simulateOneTimestep()
+        void simulateOneTimestep() override
         {
             //Read input variables
 //            Seed = (*mpSeed);
@@ -105,14 +115,14 @@ namespace hopsan {
         }
 
         //Finalize
-        void finalize()
+        void finalize() override
         {
             //Finalize code
             
         }
 
         //Finalize
-        void deconfigure()
+        void deconfigure() override
         {
             //Deconfigure code
             

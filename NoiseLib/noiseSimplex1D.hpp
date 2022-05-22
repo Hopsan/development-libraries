@@ -25,7 +25,7 @@
 #ifndef NOISESIMPLEX1D_HPP_INCLUDED
 #define NOISESIMPLEX1D_HPP_INCLUDED
 
-#include <math.h>
+#include <cmath>
 #include "ComponentEssentials.h"
 #include "ComponentUtilities.h"
 #include <sstream>
@@ -46,7 +46,6 @@ namespace hopsan {
         OpenSimplexNoise::Noise *mNoise;
         //Declare data pointer variables
         double *mpSignal;
-        double mSeed;
         double *mpSeed;
         double mHeading;
 
@@ -59,7 +58,7 @@ namespace hopsan {
         }
 
         //Configure
-        void configure() {
+        void configure() override {
             //Register constants
             addConstant("scale", "", "", 1, mscale);
 //            addConstant("Seed", "", "", 0, mSeed);
@@ -76,7 +75,7 @@ namespace hopsan {
         }
 
         //Initialize
-        void initialize() {
+        void initialize() override {
             //Initialize variables
             mNoise = new OpenSimplexNoise::Noise(*mpSeed);
             mHeading = deg2rad(mHeading);
@@ -90,11 +89,11 @@ namespace hopsan {
 
 
             //Write output variables
-            (*mpSignal) =mNoise->eval(cos(mHeading) * mTime * mscale+mOffX, sin(mHeading) * mTime * mscale+ mOffY);;
+            (*mpSignal) =mNoise->eval(cos(mHeading) * mTime * mscale+mOffX, sin(mHeading) * mTime * mscale+ mOffY);
         }
 
         //Simulate one time step
-        void simulateOneTimestep() {
+        void simulateOneTimestep() override {
             //Read input variables
             Signal = (*mpSignal);
 
@@ -106,13 +105,13 @@ namespace hopsan {
         }
 
         //Finalize
-        void finalize() {
+        void finalize() override {
             //Finalize code
             delete mNoise;
         }
 
         //Finalize
-        void deconfigure() {
+        void deconfigure() override {
             //Deconfigure code
 
         }
