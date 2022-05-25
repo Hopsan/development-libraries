@@ -21,7 +21,15 @@
  the Hopsan source code root directory.
 
 -----------------------------------------------------------------------------*/
-
+/*
+ * @file   noiseSimplex4D.hpp
+ * @author Lönja Selter <Loenja@Selter.co.uk>
+ * @date   2022-05-22
+ *
+ * @brief 4D simplex noise based on input coordinates.
+ *
+ *
+ */
 #ifndef NOISESIMPLEX4D_HPP_INCLUDED
 #define NOISESIMPLEX4D_HPP_INCLUDED
 
@@ -41,7 +49,6 @@ namespace hopsan {
     class noiseSimplex4D : public ComponentSignal {
     private:                         // Private section
         //Declare local variables
-//        double mSeed;
         double X;
         double Y;
         double Z;
@@ -76,11 +83,6 @@ namespace hopsan {
 
         //Initialize
         void initialize() override {
-            //Initialize variables
-
-
-            //Get data pointers
-
 
             //Read input variables
             X = (*mpX);
@@ -102,10 +104,6 @@ namespace hopsan {
             Y = (*mpY);
             Z = (*mpZ);
             W = (*mpW);
-//            Signal = (*mpSignal);
-
-            //Simulation code
-
 
             //Write output variables
             (*mpSignal) = mNoise->eval(X, Y, Z, W);

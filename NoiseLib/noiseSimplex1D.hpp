@@ -21,7 +21,14 @@
  the Hopsan source code root directory.
 
 -----------------------------------------------------------------------------*/
-
+/*
+ * @file   noiseSimplex1D.hpp
+ * @author Lönja Selter <Loenja@Selter.co.uk>
+ * @date   2022-05-22
+ *
+ * @brief Simple simulation time based simplex noise.
+ *
+*/
 #ifndef NOISESIMPLEX1D_HPP_INCLUDED
 #define NOISESIMPLEX1D_HPP_INCLUDED
 

@@ -22,14 +22,11 @@
 
 -----------------------------------------------------------------------------*/
 /*
- * Components for various types of noise and randomness.
- *
- *
  * @file   noiseSeed.hpp
  * @author Lönja Selter <Loenja@Selter.co.uk>
  * @date   2022-05-22
  *
- * @brief
+ * @brief Generates a single random value at start of simulation
  *
 */
 
@@ -45,56 +42,45 @@
 #include <string>
 #include <random>
 #include <ctime>
+#include <chrono>
 
 using namespace std;
 
 namespace hopsan {
 
-    class noiseSeed : public ComponentSignal
-    {
+    class noiseSeed : public ComponentSignal {
     private:                         // Private section
         //Declare local variables
 
+        double mMin, mMax;
+
         //Declare data pointer variables
         double *mpSeed;
-        double mMin, mMax;
-        //Declare ports
-        
+
 
     public:                              //Public section
-        static Component *Creator()
-        {
+        static Component *Creator() {
             return new noiseSeed();
         }
-        
+
         //Configure
-        void configure() override
-        {
+        void configure() override {
             //Register constants
+            addConstant("Min", "", "", 0, mMin);
+            addConstant("Max", "", "", 1, mMax);
 
 
             //Add ports
             addOutputVariable("Seed", "Pseudo random number beween limits", "", 0, &mpSeed);
-            addConstant("Min", "", "", 0, mMin);
-            addConstant("Max", "", "", 1, mMax);
             //Configuration code
-            
+
         }
-        
+
         //Initialize
-        void initialize() override
-        {
-            //Initialize variables
-
-
-            //Get data pointers
-            
-
-            //Read input variables
-//            Seed = (*mpSeed);
-
+        void initialize() override {
             //Initialization code
-            std::mt19937 gen (std::time(NULL));
+            std::mt19937 gen(
+                    static_cast<long unsigned int>(std::chrono::high_resolution_clock::now().time_since_epoch().count()));
             std::uniform_real_distribution<double> dis(mMin, mMax);
 
             //Write output variables
@@ -102,34 +88,24 @@ namespace hopsan {
         }
 
         //Simulate one time step
-        void simulateOneTimestep() override
-        {
-            //Read input variables
-//            Seed = (*mpSeed);
-//
-//            //Simulation code
-//
-//
-//            //Write output variables
-//            (*mpSeed) = Seed;
+        void simulateOneTimestep() override {
+            //nothing to do here.
         }
 
         //Finalize
-        void finalize() override
-        {
+        void finalize() override {
             //Finalize code
-            
+
         }
 
         //Finalize
-        void deconfigure() override
-        {
+        void deconfigure() override {
             //Deconfigure code
-            
+
         }
 
         //Auxiliary functions
-        
+
     };
 }
 

@@ -21,7 +21,14 @@
  the Hopsan source code root directory.
 
 -----------------------------------------------------------------------------*/
-
+/*
+ * @file   noiseVariableSimplex1D.hpp
+ * @author Lönja Selter <Loenja@Selter.co.uk>
+ * @date   2022-05-22
+ *
+ * @brief Simple variable based simplex noise.
+ *
+*/
 #ifndef NOISEVARIABLESIMPLEX1D_HPP_INCLUDED
 #define NOISEVARIABLESIMPLEX1D_HPP_INCLUDED
 
@@ -49,7 +56,6 @@ namespace hopsan {
         double *mpX;
 
         double *mpSignal;
-//        double signal;
         OpenSimplexNoise::Noise *mNoise;
 
         //Declare ports
@@ -79,8 +85,6 @@ namespace hopsan {
         //Initialize
         void initialize() override
         {
-            //Initialize variables
-            
 
             //Get data pointers
             mNoise = new OpenSimplexNoise::Noise(lround(*mpSeed));
@@ -89,10 +93,6 @@ namespace hopsan {
 
             //Read input variables
             X = (*mpX);
-//            Signal = (*mpSignal);
-
-            //Initialization code
-            
 
             //Write output variables
             (*mpSignal) = mNoise->eval(cos(mHeading) * X, sin(mHeading) * X);
@@ -104,10 +104,6 @@ namespace hopsan {
         {
             //Read input variables
             X = (*mpX);
-//            signal = (*mpSignal);
-            //Simulation code
-
-
             //Write output variables
             (*mpSignal) = mNoise->eval(cos(mHeading) * X, sin(mHeading) * X);
         }
@@ -123,7 +119,7 @@ namespace hopsan {
         //Finalize
         void deconfigure() override
         {
-            //Deconfigure code
+            //Nothing to do here
             
         }
 
