@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsancomponentlibrary version="0.3">
+  <id>e0aa022d-6805-4848-8dbe-334424dfc9a5</id>
+  <name>Noise</name>
+  <lib debug_ext="_d">Noise</lib>
+  <buildflags>
+    <cflags os="">-std=gnu++11</cflags>
+
+  </buildflags>
+
+
+
+  <source>Noise.cpp</source>
+  <source>libs/OpenSimplexNoise/OpenSimplexNoise/OpenSimplexNoise.cpp</source>
+
+
+  <component>noiseSimplex1D.hpp</component>
+  <component>noiseSimplex4D.hpp</component>
+  <component>noiseVariableSimplex1D.hpp</component>
+  <component>noiseSeed.hpp</component>
+
+  <componentxml>noiseSimplex1D.xml</componentxml>
+  <componentxml>noiseSimplex4D.xml</componentxml>
+  <componentxml>noiseVariableSimplex1D.xml</componentxml>
+  <componentxml>noiseSeed.xml</componentxml>
+
+
+</hopsancomponentlibrary>

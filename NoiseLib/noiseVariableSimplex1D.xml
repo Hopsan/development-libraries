@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject libpath="" typename="noiseVariableSimplex1D" displayname="Variable Simplex Noise 1D" sourcecode="noiseVariableSimplex1D.hpp" recompilable="true">
+    <icons>
+      <icon scale="1" path="noiseSimplex1DVar.svg" iconrotation="OFF" type="iso"/>
+    </icons>
+    <help>
+
+      <text></text>
+      <md>noiseSimplex1DVar.md</md>
+    </help>
+    <ports>
+      <port name="X" a="180" y="0.5" x="0"/>
+      <port name="Signal" a="0" y="0.5" x="1"/>
+      <port x="0.5" y="1" name="Seed" a="90"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>

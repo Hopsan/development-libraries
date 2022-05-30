@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject libpath="" typename="noiseSimplex4D" displayname="Simplex Noise 4D" sourcecode="noiseSimplex4D.hpp" recompilable="true">
+    <icons>
+      <icon scale="1" path="noiseSimplex4D.svg" iconrotation="OFF" type="iso"/>
+    </icons>
+    <help>
+
+      <text></text>
+      <md>noiseSimplex4D.md</md>
+    </help>
+    <ports>
+      <port name="X" a="180" y="0.2" x="0"/>
+      <port name="Y" a="180" y="0.4" x="0"/>
+      <port name="Z" a="180" y="0.6" x="0"/>
+      <port name="W" a="180" y="0.8" x="0"/>
+      <port name="Signal" a="0" y="0.5" x="1"/>
+      <port x="0.5" y="1" name="Seed" a="90"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>

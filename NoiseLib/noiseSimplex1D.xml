@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject typename="noiseSimplex1D" recompilable="true" displayname="Simplex Noise 1D" libpath="" sourcecode="noiseSimplex1D.hpp">
+    <icons>
+      <icon scale="1" path="noiseSimplex1D.svg" iconrotation="OFF" type="iso"/>
+    </icons>
+    <help>
+
+      <text></text>
+      <md>noiseSimplex1D.md</md>
+    </help>
+    <ports>
+      <port x="1" y="0.5" name="Signal" a="0"/>
+      <port x="0.5" y="1" name="Seed" a="90"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>

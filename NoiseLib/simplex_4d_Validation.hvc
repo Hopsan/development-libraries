@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanvalidationconfiguration hvcversion="0.2">
+  <validation hopsanguiversion="2.19.1.20211105.2231" hopsancoreversion="2.19.1.20211105.2231" date="20220519" time="232650">
+    <modelfile>../Hopsan models/simplex.hmf</modelfile>
+    <hvdfile>simplex_4d_Validation.hvd</hvdfile>
+    <variable name="Simplex4D#Signal#Value">
+      <timecolumn>0</timecolumn>
+      <column>1</column>
+      <tolerance>0.01</tolerance>
+    </variable>
+  </validation>
+</hopsanvalidationconfiguration>
