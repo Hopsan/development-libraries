@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject displayname="ElectricFuelCellL1" typename="ElectricFuelCellL1">
+    <icons>
+      <icon iconrotation="" scale="1" path="ElectricFuelCell.svg" type="user"/>
+      <icon iconrotation="" scale="1" path="ElectricFuelCell.svg" type="iso"/>
+    </icons>
+    <ports>
+      <port x="0.5" y="0" name="Pfc" a="270" autoplaced="true" enabled="true"/>
+      <port x="0" y="0.5" name="Pp1" a="270" autoplaced="true" enabled="true"/>
+      <port x="1" y="0.2" name="ifc0" a="0" autoplaced="true" enabled="true"/>
+      <port x="1" y="0.4" name="uohmic" a="0" autoplaced="true" enabled="true"/>
+      <port x="1" y="0.6" name="uact" a="0" autoplaced="true" enabled="true"/>
+      <port x="1" y="0.8" name="ucon" a="0" autoplaced="true" enabled="true"/>
+      <port x="1" y="1" name="ufc0" a="0" autoplaced="true" enabled="true"/>
+      <port x="0.8" y="1" name="Powfc" a="90" autoplaced="true" enabled="true"/>
+      <port x="0.6" y="1" name="mFC" a="90" autoplaced="true" enabled="true"/>
+      <port x="0.4" y="1" name="etaFC" a="90" autoplaced="true" enabled="true"/>
+    </ports>
+    <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+  </modelobject>
+</hopsanobjectappearance>

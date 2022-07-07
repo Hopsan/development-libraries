@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsancomponentlibrary xmlversion="0,1" libversion="1" name="FuelCell">
+    <lib>FuelCellLib</lib>
+    <source>FuelCellLib.cc</source>
+	<component>ElectricFuelCellL1.hpp</component>
+</hopsancomponentlibrary>
