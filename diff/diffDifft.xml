@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject libpath="" typename="diffDifft" displayname="Differentiator" sourcecode="diffDifft.hpp" recompilable="true">
+    <icons>
+    <icon scale="1" path="diffDifft.svg" iconrotation="OFF" type="iso"/>
+    <icon scale="1" path="diffDifft.svg" iconrotation="OFF" type="user"/>
+    </icons>
+    <ports>
+      <port a="180" x="0" name="In1" y="0.5"/>
+      <port a="0" x="1" name="Out1" y="0.5"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>
