@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsancomponentlibrary version="0.3">
+  <id>aa88af6d-2e9b-41ac-9be3-fd4a07c93d3f</id>
+  <name>Diff</name>
+  <lib debug_ext="_d">Diff</lib>
+  <buildflags>
+
+
+  </buildflags>
+
+
+
+  <source>Diff.cpp</source>
+
+  <component>diffDiff.hpp</component>
+
+  <componentxml>diffDiff.xml</componentxml>
+
+  <component>diffDifft.hpp</component>
+
+  <componentxml>diffDifft.xml</componentxml>
+
+
+</hopsancomponentlibrary>
