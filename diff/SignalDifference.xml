@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject libpath="" typename="SignalDifference" displayname="Difference" sourcecode="SignalDifference.hpp" recompilable="true">
+    <icons>
+    <icon scale="1" path="SignalDifference.svg" iconrotation="OFF" type="iso"/>
+    <icon scale="1" path="SignalDifference.svg" iconrotation="OFF" type="user"/>
+    </icons>
+    <ports>
+      <port a="180" x="0" name="in" y="0.5"/>
+      <port a="0" x="1" name="out" y="0.5"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>

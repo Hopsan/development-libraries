@@ -12,13 +12,13 @@
 
   <source>Diff.cpp</source>
 
-  <component>diffDiff.hpp</component>
+  <component>SignalDifference.hpp</component>
 
-  <componentxml>diffDiff.xml</componentxml>
+  <componentxml>SignalDifference.xml</componentxml>
 
-  <component>diffDifft.hpp</component>
+  <component>SignalDifferentiator.hpp</component>
 
-  <componentxml>diffDifft.xml</componentxml>
+  <componentxml>SignalDifferentiator.xml</componentxml>
 
 
 </hopsancomponentlibrary>
