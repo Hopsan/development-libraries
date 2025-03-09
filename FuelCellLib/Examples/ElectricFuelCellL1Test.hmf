@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanmodelfile hopsanguiversion="2.14.2.20200522.1852" hmfversion="0.4" hopsancoreversion="2.14.2.20200522.1852">
+  <requirements>
+    <componentlibrary>
+      <id>59c07d33-554f-49d3-a163-a928823d4380</id>
+      <name>HopsanDefaultComponentLibrary</name>
+    </componentlibrary>
+    <componentlibrary>
+      <id>FuelCell</id>
+      <name>FuelCell</name>
+    </componentlibrary>
+  </requirements>
+  <system typename="Subsystem" locked="false" name="ElectricFuelCellL1Test" cqstype="UndefinedCQSType" disabled="false" subtypename="">
+    <simulationtime start="-1" inherit_timestep="true" timestep="0.001" stop="10"/>
+    <simulationlogsettings starttime="0" numsamples="2048"/>
+    <parameters/>
+    <aliases/>
+    <hopsangui>
+      <pose x="0" a="0" flipped="false" y="0"/>
+      <nametext position="0" visible="0"/>
+      <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000" disabled="false"/>
+      <viewport x="2221.51" y="2486.01" zoom="0.999997"/>
+      <ports hidden="0"/>
+      <names hidden="1"/>
+      <graphics type="user"/>
+      <scriptfile path=""/>
+      <hopsanobjectappearance version="0.3">
+        <modelobject typename="Subsystem" displayname="ElectricFuelCellL1Test">
+          <icons>
+            <icon path="subsystemDefault.svg" type="defaultmissing"/>
+          </icons>
+          <ports/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+        </modelobject>
+      </hopsanobjectappearance>
+      <optimization>
+        <settings>
+          <iterations>100</iterations>
+          <nsearchp>8</nsearchp>
+          <refcoeff>1.3</refcoeff>
+          <randfac>0.3</randfac>
+          <forgfac>0</forgfac>
+          <partol>0.0001</partol>
+          <plot>true</plot>
+          <savecsv>false</savecsv>
+          <finaleval>true</finaleval>
+          <logpar>false</logpar>
+        </settings>
+        <parameters/>
+        <objectives/>
+      </optimization>
+      <senstivitityanalysis>
+        <settings>
+          <iterations>100</iterations>
+          <distribution>uniform</distribution>
+        </settings>
+        <parameters/>
+        <plotvariables/>
+      </senstivitityanalysis>
+    </hopsangui>
+    <objects>
+      <component typename="SignalAdd" locked="false" name="Add_1" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="in1#Value" type="double" unit=""/>
+          <parameter value="0" name="in2#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="in1" nodetype="NodeSignal" porttype="ReadPortType"/>
+          <port name="in2" nodetype="NodeSignal" porttype="ReadPortType"/>
+          <port name="out" nodetype="NodeSignal" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2058.496617" a="0" flipped="false" y="2677.008031"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalAdd" displayname="Add_1">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="SignalGain" locked="false" name="Container_mass_calculation" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="in#Value" type="double" unit=""/>
+          <parameter value="1/0.06" name="k#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="in" nodetype="NodeSignal" porttype="ReadPortType"/>
+          <port name="k" nodetype="NodeSignal"/>
+          <port name="out" nodetype="NodeSignal" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2008.006024" a="0" flipped="false" y="2677.008031"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalGain" displayname="Container_mass_calculation">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="SignalSink" locked="false" name="Scope_3" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="in_bottom#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="in" nodetype="NodeSignal" porttype="ReadMultiportType"/>
+          <port name="in_bottom" nodetype="NodeSignal" porttype="ReadPortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2411.007233" a="0" flipped="false" y="2677.008031"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalSink" displayname="Scope_3">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="SignalRamp" locked="false" name="Ramp" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="y_0#Value" type="double" unit=""/>
+          <parameter value="-42" name="y_A#Value" type="double" unit=""/>
+          <parameter value="2" name="t_start#Value" type="double" unit="s"/>
+          <parameter value="8" name="t_end#Value" type="double" unit="s"/>
+        </parameters>
+        <ports>
+          <port name="y_0" nodetype="NodeSignal"/>
+          <port name="y_A" nodetype="NodeSignal"/>
+          <port name="t_start" nodetype="NodeSignal"/>
+          <port name="t_end" nodetype="NodeSignal"/>
+          <port name="out" nodetype="NodeSignal" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2506.984483" a="0" flipped="false" y="2380.287673"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalRamp" displayname="Ramp">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="ElectricIsensor" locked="false" name="Current_sensor" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="Pel1#Voltage" type="double" unit="V"/>
+          <parameter value="0" name="Pel1#Current" type="double" unit="A"/>
+          <parameter value="0" name="Pel1#WaveVariable" type="double" unit="V"/>
+          <parameter value="0" name="Pel1#CharImpedance" type="double" unit="V/A"/>
+        </parameters>
+        <ports>
+          <port name="Pel1" nodetype="NodeElectric" porttype="ReadPortType"/>
+          <port name="Piout" nodetype="NodeSignal" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2329.31513" a="0" flipped="false" y="2468.98693"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="ElectricIsensor" displayname="Current_sensor">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="SignalSink" locked="false" name="Scope" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="in_bottom#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="in" nodetype="NodeSignal" porttype="ReadMultiportType"/>
+          <port name="in_bottom" nodetype="NodeSignal" porttype="ReadPortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2292.999895" a="0" flipped="false" y="2304.999747"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalSink" displayname="Scope">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="PneumaticQsrc" locked="false" name="PneumaticQsrc" cqstype="Q" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="qminput#Value" type="double" unit="kg/s"/>
+          <parameter value="273" name="Tinput#Value" type="double" unit="K"/>
+          <parameter value="718" name="cv#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="Pp1" nodetype="NodePneumatic" porttype="PowerPortType"/>
+          <port name="qminput" nodetype="NodeSignal" porttype="ReadPortType"/>
+          <port name="Tinput" nodetype="NodeSignal" porttype="ReadPortType"/>
+          <port name="cv" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="2002.922587" a="0" flipped="false" y="2552.999993"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="PneumaticQsrc" displayname="PneumaticQsrc">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="ElectricFuelCellL1" locked="false" name="ElectricFuelCellL1" cqstype="Q" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="1" name="thetaFcRef#Value" type="double" unit=""/>
+          <parameter value="8.314" name="R#Value" type="double" unit="J/Kg K"/>
+          <parameter value="14200" name="cv#Value" type="double" unit="J/Kg K"/>
+          <parameter value="1000" name="kmFC#Value" type="double" unit="W/kg"/>
+          <parameter value="48" name="nstack#Value" type="double" unit=""/>
+          <parameter value="323" name="T#Value" type="double" unit="K"/>
+          <parameter value="298.15" name="Tref#Value" type="double" unit="K"/>
+          <parameter value="0.00625" name="A#Value" type="double" unit="m2"/>
+          <parameter value="2.5e-005" name="l#Value" type="double" unit="m"/>
+          <parameter value="1" name="Ph2#Value" type="double" unit="atm"/>
+          <parameter value="1" name="Po2#Value" type="double" unit="atm"/>
+          <parameter value="1" name="P0#Value" type="double" unit="atm"/>
+          <parameter value="96485.3" name="Faraday#Value" type="double" unit=""/>
+          <parameter value="164.025" name="dS#Value" type="double" unit=""/>
+          <parameter value="228001" name="dG#Value" type="double" unit=""/>
+          <parameter value="0.16" name="B#Value" type="double" unit="V"/>
+          <parameter value="0.0003" name="Rc#Value" type="double" unit=""/>
+          <parameter value="0.2" name="Ch2#Value" type="double" unit=""/>
+          <parameter value="-0.948" name="ksi1#Value" type="double" unit=""/>
+          <parameter value="7.6e-005" name="ksi3#Value" type="double" unit=""/>
+          <parameter value="-0.000193" name="ksi4#Value" type="double" unit=""/>
+          <parameter value="23" name="psi#Value" type="double" unit=""/>
+          <parameter value="6720" name="Jmax#Value" type="double" unit="A/m2"/>
+          <parameter value="12" name="Jn#Value" type="double" unit="A/m2"/>
+          <parameter value="0.002016" name="MH2#Value" type="double" unit="kg/mol"/>
+          <parameter value=".03" name="cA#Value" type="double" unit="F"/>
+          <parameter value="1000" name="conNum#Value" type="double" unit="1/Ohm"/>
+          <parameter value=".01" name="thaucon#Value" type="double" unit="s"/>
+          <parameter value="1" name="timeComp#Value" type="double" unit=""/>
+          <parameter value="2.71828" name="e#Value" type="double" unit=""/>
+          <parameter value="1" name="mFC#Value" type="double" unit=""/>
+          <parameter value=".9" name="unernst#Value" type="double" unit=""/>
+          <parameter value="10" name="uOhmic#Value" type="double" unit=""/>
+          <parameter value="1" name="uact#Value" type="double" unit=""/>
+          <parameter value="1" name="ucon#Value" type="double" unit=""/>
+          <parameter value="1" name="ufc0#Value" type="double" unit=""/>
+          <parameter value="1" name="ufcr#Value" type="double" unit=""/>
+          <parameter value="1" name="ufc1#Value" type="double" unit=""/>
+          <parameter value="0" name="ifc0#Value" type="double" unit=""/>
+          <parameter value="0" name="etaFC#Value" type="double" unit=""/>
+          <parameter value="0" name="Powfc#Value" type="double" unit=""/>
+          <parameter value="0" name="rhoM#Value" type="double" unit=""/>
+          <parameter value="0" name="WH2#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="Pfc" nodetype="NodeElectric" porttype="PowerPortType"/>
+          <port name="Pp1" nodetype="NodePneumatic" porttype="PowerPortType"/>
+          <port name="thetaFcRef" nodetype="NodeSignal"/>
+          <port name="R" nodetype="NodeSignal"/>
+          <port name="cv" nodetype="NodeSignal"/>
+          <port name="kmFC" nodetype="NodeSignal"/>
+          <port name="nstack" nodetype="NodeSignal"/>
+          <port name="T" nodetype="NodeSignal"/>
+          <port name="Tref" nodetype="NodeSignal"/>
+          <port name="A" nodetype="NodeSignal"/>
+          <port name="l" nodetype="NodeSignal"/>
+          <port name="Ph2" nodetype="NodeSignal"/>
+          <port name="Po2" nodetype="NodeSignal"/>
+          <port name="P0" nodetype="NodeSignal"/>
+          <port name="Faraday" nodetype="NodeSignal"/>
+          <port name="dS" nodetype="NodeSignal"/>
+          <port name="dG" nodetype="NodeSignal"/>
+          <port name="B" nodetype="NodeSignal"/>
+          <port name="Rc" nodetype="NodeSignal"/>
+          <port name="Ch2" nodetype="NodeSignal"/>
+          <port name="ksi1" nodetype="NodeSignal"/>
+          <port name="ksi3" nodetype="NodeSignal"/>
+          <port name="ksi4" nodetype="NodeSignal"/>
+          <port name="psi" nodetype="NodeSignal"/>
+          <port name="Jmax" nodetype="NodeSignal"/>
+          <port name="Jn" nodetype="NodeSignal"/>
+          <port name="MH2" nodetype="NodeSignal"/>
+          <port name="cA" nodetype="NodeSignal"/>
+          <port name="conNum" nodetype="NodeSignal"/>
+          <port name="thaucon" nodetype="NodeSignal"/>
+          <port name="timeComp" nodetype="NodeSignal"/>
+          <port name="e" nodetype="NodeSignal"/>
+          <port name="mFC" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="unernst" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="uOhmic" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="uact" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="ucon" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="ufc0" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="ufcr" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="ufc1" nodetype="NodeSignal"/>
+          <port name="ifc0" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="etaFC" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="Powfc" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="rhoM" nodetype="NodeSignal" porttype="WritePortType"/>
+          <port name="WH2" nodetype="NodeSignal" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2329" a="0" flipped="false" y="2555"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="ElectricFuelCellL1" displayname="ElectricFuelCellL1">
+              <ports>
+                <port name="Powfc" enabled="true" x="0.9571428571" a="90" autoplaced="false" y="1"/>
+                <port name="ufc0" enabled="true" x="0" a="180" autoplaced="false" y="0.8175438597"/>
+                <port name="uOhmic" enabled="true" x="0" a="180" autoplaced="false" y="0.5578947368"/>
+                <port name="uact" enabled="true" x="0" a="180" autoplaced="false" y="0.2842105263"/>
+                <port name="etaFC" enabled="true" x="0.6880952381" a="90" autoplaced="false" y="1"/>
+                <port name="ifc0" enabled="true" x="0.2380952381" a="90" autoplaced="false" y="0.9964912281"/>
+                <port name="ucon" enabled="true" x="0" a="180" autoplaced="false" y="0.4175438596"/>
+                <port name="unernst" enabled="true" x="0" a="180" autoplaced="false" y="0.1578947368"/>
+                <port name="rhoM" enabled="true" x="0.4666666667" a="90" autoplaced="false" y="1"/>
+                <port name="ufcr" enabled="true" x="0" a="180" autoplaced="false" y="0.950877193"/>
+                <port name="WH2" enabled="true" x="0" a="180" autoplaced="false" y="0.6842105263"/>
+              </ports>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="SignalAdd" locked="false" name="Add" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="in1#Value" type="double" unit=""/>
+          <parameter value="0" name="in2#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="in1" nodetype="NodeSignal" porttype="ReadPortType"/>
+          <port name="in2" nodetype="NodeSignal" porttype="ReadPortType"/>
+          <port name="out" nodetype="NodeSignal" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2333.006999" a="0" flipped="false" y="2677.008031"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalAdd" displayname="Add">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="SignalSink" locked="false" name="Scope_1" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="in_bottom#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="in" nodetype="NodeSignal" porttype="ReadMultiportType"/>
+          <port name="in_right" nodetype="NodeSignal" porttype="ReadMultiportType"/>
+          <port name="in_bottom" nodetype="NodeSignal" porttype="ReadPortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2289.999809" a="0" flipped="false" y="2368.007785"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalSink" displayname="Scope_1">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="ElectricIsource" locked="false" name="Ideal_Current_Source" cqstype="Q" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="10" name="iin#Value" type="double" unit="A"/>
+        </parameters>
+        <ports>
+          <port name="Pel1" nodetype="NodeElectric" porttype="PowerPortType"/>
+          <port name="iin" nodetype="NodeSignal" porttype="ReadPortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2573.518534" a="0" flipped="false" y="2480.808745"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="ElectricIsource" displayname="Ideal_Current_Source">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="ElectricCapacitanceMultiPort" locked="false" name="Electric_capacitance_Multi_Port" cqstype="C" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="1" name="Pel1#Voltage" type="double" unit="V"/>
+          <parameter value="0" name="Pel1#Current" type="double" unit="A"/>
+          <parameter value="0" name="Pel1#WaveVariable" type="double" unit="V"/>
+          <parameter value="0" name="Pel1#CharImpedance" type="double" unit="V/A"/>
+          <parameter value="0.001" name="Capacitance" type="double" unit="Fa"/>
+          <parameter value="0.5" name="alpha#Value" type="double" unit="-"/>
+        </parameters>
+        <ports>
+          <port name="Pel1" nodetype="NodeElectric" porttype="PowerMultiportType"/>
+          <port name="alpha" nodetype="NodeSignal"/>
+        </ports>
+        <hopsangui>
+          <pose x="2438.505877" a="0" flipped="false" y="2456.657516"/>
+          <nametext position="1" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="ElectricCapacitanceMultiPort" displayname="Electric_capacitance_Multi_Port">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="SignalConstant" locked="false" name="Tank_volume" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="1e-3" name="y#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="y" nodetype="NodeSignal" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="1997.005991" a="0" flipped="false" y="2503.007509"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalConstant" displayname="Tank_volume">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="SignalSink" locked="false" name="Scope_2" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="in_bottom#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="in" nodetype="NodeSignal" porttype="ReadMultiportType"/>
+          <port name="in_right" nodetype="NodeSignal" porttype="ReadMultiportType"/>
+          <port name="in_bottom" nodetype="NodeSignal" porttype="ReadPortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2568.008401" a="0" flipped="false" y="2265.007399"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="SignalSink" displayname="Scope_2">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="PneumaticVolume2" locked="false" name="PneumaticVolume2" cqstype="C" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="Pp1#MassFlow" type="double" unit="kg/s"/>
+          <parameter value="0" name="Pp1#EnergyFlow" type="double" unit="J/s"/>
+          <parameter value="700e5" name="Pp1#Pressure" type="double" unit="Pa"/>
+          <parameter value="293" name="Pp1#Temperature" type="double" unit="K"/>
+          <parameter value="100000" name="Pp1#WaveVariable" type="double" unit="Pa"/>
+          <parameter value="0" name="Pp1#CharImpedance" type="double" unit="?"/>
+          <parameter value="0" name="Pp2#MassFlow" type="double" unit="kg/s"/>
+          <parameter value="0" name="Pp2#EnergyFlow" type="double" unit="J/s"/>
+          <parameter value="700e5" name="Pp2#Pressure" type="double" unit="Pa"/>
+          <parameter value="293" name="Pp2#Temperature" type="double" unit="K"/>
+          <parameter value="100000" name="Pp2#WaveVariable" type="double" unit="Pa"/>
+          <parameter value="0" name="Pp2#CharImpedance" type="double" unit="?"/>
+          <parameter value="0.001" name="V#Value" type="double" unit="m3"/>
+          <parameter value="4124.2" name="R#Value" type="double" unit="J/Kg K"/>
+          <parameter value="10183" name="cv#Value" type="double" unit="J/Kg K"/>
+          <parameter value="0" name="ka#Value" type="double" unit="J/Ks"/>
+          <parameter value="300" name="T0#Value" type="double" unit="K"/>
+          <parameter value="0.1" name="alpha#Value" type="double" unit=""/>
+          <parameter value="1" name="pmin#Value" type="double" unit=""/>
+          <parameter value="0" name="mass#Value" type="double" unit=""/>
+        </parameters>
+        <ports>
+          <port name="Pp1" nodetype="NodePneumatic" porttype="PowerPortType"/>
+          <port name="Pp2" nodetype="NodePneumatic" porttype="PowerPortType"/>
+          <port name="V" nodetype="NodeSignal" porttype="ReadPortType"/>
+          <port name="R" nodetype="NodeSignal"/>
+          <port name="cv" nodetype="NodeSignal"/>
+          <port name="ka" nodetype="NodeSignal"/>
+          <port name="T0" nodetype="NodeSignal"/>
+          <port name="alpha" nodetype="NodeSignal"/>
+          <port name="pmin" nodetype="NodeSignal"/>
+          <port name="mass" nodetype="NodeSignal" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2058.496617" a="0" flipped="false" y="2555"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="PneumaticVolume2" displayname="PneumaticVolume2">
+              <ports>
+                <port name="V" enabled="true" x="0.496" a="270" autoplaced="false" y="0"/>
+              </ports>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <component typename="ElectricUsensor" locked="false" name="Voltage_sensor" cqstype="S" disabled="false" subtypename="">
+        <parameters>
+          <parameter value="0" name="Pel1#Voltage" type="double" unit="V"/>
+          <parameter value="0" name="Pel1#Current" type="double" unit="A"/>
+          <parameter value="0" name="Pel1#WaveVariable" type="double" unit="V"/>
+          <parameter value="0" name="Pel1#CharImpedance" type="double" unit="V/A"/>
+        </parameters>
+        <ports>
+          <port name="Pel1" nodetype="NodeElectric" porttype="ReadPortType"/>
+          <port name="Puout" nodetype="NodeSignal" porttype="WritePortType"/>
+        </ports>
+        <hopsangui>
+          <pose x="2244.999901" a="0" flipped="false" y="2458.999901"/>
+          <nametext position="0" visible="0"/>
+          <animation flowspeed="100" hydraulicminpressure="0" hydraulicmaxpressure="20000000"/>
+          <hopsanobjectappearance version="0.3">
+            <modelobject typename="ElectricUsensor" displayname="Voltage_sensor">
+              <ports/>
+            </modelobject>
+          </hopsanobjectappearance>
+        </hopsangui>
+      </component>
+      <textboxwidget>
+        <hopsangui>
+          <pose x="2072.999178" y="2343.000129"/>
+          <textobject fontcolor="#556b2f" reflow="1" text="Stack level voltage and power" font="Calibri,12,-1,0,50,0,0,0,0,0"/>
+          <size height="50.000012" width="139.999814"/>
+          <line color="#556b2f" width="2" style="solidline" visible="1"/>
+        </hopsangui>
+      </textboxwidget>
+      <textboxwidget>
+        <hopsangui>
+          <pose x="0.000000" y="2266.006870"/>
+          <textobject fontcolor="#556b2f" reflow="1" text="Stack level voltage and power" font="Calibri,12,-1,0,50,0,0,0,0,0"/>
+          <size height="46.000000" width="141.984375"/>
+          <line color="#556b2f" width="2" style="solidline" visible="1"/>
+        </hopsangui>
+      </textboxwidget>
+      <textboxwidget>
+        <hopsangui>
+          <pose x="2073.000126" y="2284.000000"/>
+          <textobject fontcolor="#556b2f" reflow="1" text="Cell level voltage" font="Calibri,12,-1,0,50,0,0,0,0,0"/>
+          <size height="39.999820" width="139.984375"/>
+          <line color="#556b2f" width="2" style="solidline" visible="1"/>
+        </hopsangui>
+      </textboxwidget>
+      <textboxwidget>
+        <hopsangui>
+          <pose x="0.000000" y="2600.007872"/>
+          <textobject fontcolor="#556b2f" reflow="1" text="Stack level voltage and power" font="Calibri,12,-1,0,50,0,0,0,0,0"/>
+          <size height="50.000012" width="141.984375"/>
+          <line color="#556b2f" width="2" style="solidline" visible="1"/>
+        </hopsangui>
+      </textboxwidget>
+      <textboxwidget>
+        <hopsangui>
+          <pose x="2451.999889" y="2652.999979"/>
+          <textobject fontcolor="#556b2f" reflow="1" text="System mass" font="Calibri,12,-1,0,50,0,0,0,0,0"/>
+          <size height="46.000000" width="80.999637"/>
+          <line color="#556b2f" width="2" style="solidline" visible="1"/>
+        </hopsangui>
+      </textboxwidget>
+      <textboxwidget>
+        <hopsangui>
+          <pose x="1959.999823" y="2175.000099"/>
+          <textobject fontcolor="#556b2f" reflow="1" text="Test modell for ElectricFuelCellL1" font="Calibri,22,-1,0,50,0,0,0,0,0"/>
+          <size height="48.999799" width="425.000657"/>
+          <line color="#556b2f" width="2" style="solidline" visible="0"/>
+        </hopsangui>
+      </textboxwidget>
+    </objects>
+    <connections>
+      <connect endcomponent="Electric_capacitance_Multi_Port" startcomponent="ElectricFuelCellL1" startport="Pfc" endport="Pel1">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2329.00000000000000000000" y="2526.50000000000000000000"/>
+            <coordinate x="2329.00000000000000000000" y="2434.65751600000021426240"/>
+            <coordinate x="2438.50587700000005497714" y="2434.65751600000021426240"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="ElectricFuelCellL1" startcomponent="Current_sensor" startport="Pel1" endport="Pfc">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2311.31512999999995372491" y="2468.98693000000002939487"/>
+            <coordinate x="2329.00000000000000000000" y="2468.98693000000002939487"/>
+            <coordinate x="2329.00000000000000000000" y="2526.50000000000000000000"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>dashed</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="ElectricFuelCellL1" startcomponent="Voltage_sensor" startport="Pel1" endport="Pfc">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2244.99990100000013626413" y="2476.99990100000013626413"/>
+            <coordinate x="2244.99990100000013626413" y="2523.00000000000000000000"/>
+            <coordinate x="2329.00000000000000000000" y="2523.00000000000000000000"/>
+            <coordinate x="2329.00000000000000000000" y="2526.50000000000000000000"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>dashed</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Scope" startcomponent="ElectricFuelCellL1" startport="unernst" endport="in">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2308.00000000000000000000" y="2535.49999999759984348202"/>
+            <coordinate x="2219.99046198819769415422" y="2535.49999999759984348202"/>
+            <coordinate x="2219.99046198819769415422" y="2304.99974699999029326136"/>
+            <coordinate x="2272.99989499967568917782" y="2304.99974699999029326136"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Electric_capacitance_Multi_Port" startcomponent="Ideal_Current_Source" startport="Pel1" endport="Pel1">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2573.51853399999981775181" y="2458.80874499999981708243"/>
+            <coordinate x="2573.51853399999981775181" y="2434.65751600000021426240"/>
+            <coordinate x="2438.50587700000005497714" y="2434.65751600000021426240"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Ideal_Current_Source" startcomponent="Ramp" startport="out" endport="iin">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2519.48448300000018207356" y="2380.28767299999981332803"/>
+            <coordinate x="2540.01854031398761435412" y="2380.28767299999981332803"/>
+            <coordinate x="2540.01854031398761435412" y="2480.80874499999981708243"/>
+            <coordinate x="2558.01853399999981775181" y="2480.80874499999981708243"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Scope" startcomponent="ElectricFuelCellL1" startport="ufcr" endport="in">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2308.00000000000000000000" y="2580.70000000099980752566"/>
+            <coordinate x="2219.80954203241572031402" y="2580.70000000099980752566"/>
+            <coordinate x="2219.80954203241572031402" y="2304.99974699999029326136"/>
+            <coordinate x="2272.99989499967568917782" y="2304.99974699999029326136"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="PneumaticVolume2" startcomponent="ElectricFuelCellL1" startport="Pp1" endport="Pp2">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2308.00000000000000000000" y="2555.00000000000000000000"/>
+            <coordinate x="2308.00000000000000000000" y="2555.00000000000000000000"/>
+            <coordinate x="2083.49661700000933706178" y="2555.00000000000000000000"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="PneumaticVolume2" startcomponent="PneumaticQsrc" startport="Pp1" endport="Pp1">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2014.92258700000002136221" y="2552.99999299999990398646"/>
+            <coordinate x="2012.49661378026985403267" y="2552.99999299999990398646"/>
+            <coordinate x="2012.49661378026985403267" y="2555.00000000000000000000"/>
+            <coordinate x="2033.49661700000933706178" y="2555.00000000000000000000"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Scope" startcomponent="Current_sensor" startport="Piout" endport="in_bottom">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2329.31512999999995372491" y="2450.98693000000002939487"/>
+            <coordinate x="2329.31512999999995372491" y="2339.99974685541792496224"/>
+            <coordinate x="2292.99989499967568917782" y="2339.99974685541792496224"/>
+            <coordinate x="2292.99989499967568917782" y="2319.99974699999029326136"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Scope_1" startcomponent="Voltage_sensor" startport="Puout" endport="in">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2244.99990100000013626413" y="2440.99990100000013626413"/>
+            <coordinate x="2244.99990100000013626413" y="2368.00778499999978521373"/>
+            <coordinate x="2269.99980899999991379445" y="2368.00778499999978521373"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Scope_1" startcomponent="Current_sensor" startport="Piout" endport="in_bottom">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2329.31512999999995372491" y="2450.98693000000002939487"/>
+            <coordinate x="2329.31512999999995372491" y="2402.00778158718321719789"/>
+            <coordinate x="2289.99980899999991379445" y="2402.00778158718321719789"/>
+            <coordinate x="2289.99980899999991379445" y="2383.00778499999978521373"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Scope_1" startcomponent="ElectricFuelCellL1" startport="Powfc" endport="in_right">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2348.19999999819992808625" y="2583.50000000000000000000"/>
+            <coordinate x="2348.19999999819992808625" y="2620.00861349096157937311"/>
+            <coordinate x="2397.00788035795221730950" y="2620.00861349096157937311"/>
+            <coordinate x="2397.00788035795221730950" y="2368.00778499999978521373"/>
+            <coordinate x="2309.99980899999991379445" y="2368.00778499999978521373"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Scope_2" startcomponent="Voltage_sensor" startport="Puout" endport="in">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2244.99990100000013626413" y="2440.99990100000013626413"/>
+            <coordinate x="2244.99990100000013626413" y="2265.00739899992686332553"/>
+            <coordinate x="2548.00840100131290455465" y="2265.00739899992686332553"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Scope_2" startcomponent="Current_sensor" startport="Piout" endport="in_right">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2329.31512999999995372491" y="2450.98693000000002939487"/>
+            <coordinate x="2329.31512999999995372491" y="2355.00774688041701665497"/>
+            <coordinate x="2623.00858280453849147307" y="2355.00774688041701665497"/>
+            <coordinate x="2623.00858280453849147307" y="2265.00739899992686332553"/>
+            <coordinate x="2588.00840100131290455465" y="2265.00739899992686332553"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="PneumaticVolume2" startcomponent="Tank_volume" startport="y" endport="V">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2009.50599101797320145124" y="2503.00750902252730156761"/>
+            <coordinate x="2058.29661700000951896072" y="2503.00750902252730156761"/>
+            <coordinate x="2058.29661700000951896072" y="2540.00000000000000000000"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Add_1" startcomponent="PneumaticVolume2" startport="mass" endport="in2">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2058.49661700000933706178" y="2570.00000000000000000000"/>
+            <coordinate x="2058.49661700000933706178" y="2644.50803102409417988383"/>
+            <coordinate x="2058.49661700000933706178" y="2644.50803102409417988383"/>
+            <coordinate x="2058.49661700000933706178" y="2664.50803102409417988383"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Add_1" startcomponent="Container_mass_calculation" startport="out" endport="in1">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2020.50602401807191199623" y="2677.00803102409508937853"/>
+            <coordinate x="2025.99661700000933706178" y="2677.00803102409508937853"/>
+            <coordinate x="2025.99661700000933706178" y="2677.00803102409417988383"/>
+            <coordinate x="2045.99661700000933706178" y="2677.00803102409417988383"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Add" startcomponent="Add_1" startport="out" endport="in1">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2070.99661700000933706178" y="2677.00803102409417988383"/>
+            <coordinate x="2297.50699002097007905832" y="2677.00803102409417988383"/>
+            <coordinate x="2297.50699002097007905832" y="2677.00803102409417988383"/>
+            <coordinate x="2320.50699902099722748972" y="2677.00803102409417988383"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Add" startcomponent="ElectricFuelCellL1" startport="mFC" endport="in2">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2333.19999999999981810106" y="2583.50000000000000000000"/>
+            <coordinate x="2333.19999999999981810106" y="2644.50803102409417988383"/>
+            <coordinate x="2333.00699902099722748972" y="2644.50803102409417988383"/>
+            <coordinate x="2333.00699902099722748972" y="2664.50803102409417988383"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Scope_3" startcomponent="Add" startport="out" endport="in">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2345.50699902099722748972" y="2677.00803102409417988383"/>
+            <coordinate x="2391.00723302169944872730" y="2677.00803102409417988383"/>
+            <coordinate x="2391.00723302169944872730" y="2677.00803102409417988383"/>
+          </coordinates>
+          <geometries>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+      <connect endcomponent="Container_mass_calculation" startcomponent="PneumaticVolume2" startport="mass" endport="in">
+        <hopsangui>
+          <coordinates>
+            <coordinate x="2058.49661700000933706178" y="2570.00000000000000000000"/>
+            <coordinate x="2058.49661700000933706178" y="2619.00785702357143236441"/>
+            <coordinate x="1960.00588001764026557794" y="2619.00785702357143236441"/>
+            <coordinate x="1960.00588001764026557794" y="2677.00803102409508937853"/>
+            <coordinate x="1995.50602401807191199623" y="2677.00803102409508937853"/>
+          </coordinates>
+          <geometries>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+            <geometry>horizontal</geometry>
+            <geometry>vertical</geometry>
+          </geometries>
+          <style>solid</style>
+        </hopsangui>
+      </connect>
+    </connections>
+  </system>
+</hopsanmodelfile>

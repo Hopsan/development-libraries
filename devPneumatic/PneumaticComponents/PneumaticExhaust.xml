@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hopsanobjectappearance version="0.3">
+    <modelobject sourcecode="PneumaticExhaust.hpp" typename="PneumaticExhaust" displayname="PneumaticExhaust">
+        <icons>
+            <icon scale="1" path="PneumaticExhaust.svg" iconrotation="ON" type="user"/>
+            <icon scale="1" path="PneumaticExhaust.svg" iconrotation="ON" type="iso"/>
+        </icons>
+		<help>
+            <text>PneumaticExhaust</text>
+            <link>PneumaticExhaust.nb</link>
+            <link>PneumaticExhaust.pdf</link>
+        </help>           
+        <ports>
+            <port x="0.5" y="0" enabled="true" a="90" name="P1" autoplaced="true"/>
+        </ports>
+        <animation flowspeed="100"/>
+    </modelobject>
+</hopsanobjectappearance>
