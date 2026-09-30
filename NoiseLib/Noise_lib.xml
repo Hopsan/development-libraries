@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hopsancomponentlibrary version="0.3">
+<hopsancomponentlibrary version="0.3" recompilable="true">
   <id>e0aa022d-6805-4848-8dbe-334424dfc9a5</id>
   <name>Noise</name>
   <lib debug_ext="_d">Noise</lib>

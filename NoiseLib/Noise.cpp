@@ -11,7 +11,7 @@
  *
 */
 
-
+#include <iostream>
 #include "ComponentEssentials.h"
 #include "noiseSimplex1D.hpp"
 #include "noiseSimplex4D.hpp"
@@ -29,7 +29,7 @@ extern "C" DLLEXPORT void register_contents(ComponentFactory* pComponentFactory,
     pComponentFactory->registerCreatorFunction("noiseSeed", noiseSeed::Creator);
 
     //Register custom nodes (if any)
-    HOPSAN_UNUSED(pNodeFactory)
+    HOPSAN_UNUSED(pNodeFactory);
 }
 
 extern "C" DLLEXPORT void get_hopsan_info(HopsanExternalLibInfoT *pHopsanExternalLibInfo)

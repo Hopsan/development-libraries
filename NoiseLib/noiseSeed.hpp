@@ -43,6 +43,8 @@
 #include <random>
 #include <ctime>
 #include <chrono>
+#include <atomic>
+#include <cstdint>
 
 using namespace std;
 
@@ -79,10 +81,21 @@ namespace hopsan {
         //Initialize
         void initialize() override {
             //Initialization code
-            std::mt19937 gen(
-                    static_cast<long unsigned int>(std::chrono::high_resolution_clock::now().time_since_epoch().count()));
+            static std::atomic<std::uint32_t> seedSequence{0};
+            std::random_device randomDevice;
+            const std::uint64_t now = static_cast<std::uint64_t>(
+                std::chrono::high_resolution_clock::now()
+                    .time_since_epoch()
+                    .count());
+            std::seed_seq seed{
+                static_cast<std::uint32_t>(randomDevice()),
+                static_cast<std::uint32_t>(randomDevice()),
+                static_cast<std::uint32_t>(now),
+                static_cast<std::uint32_t>(now >> 32),
+                seedSequence.fetch_add(1, std::memory_order_relaxed)
+            };
+            std::mt19937 gen(seed);
             std::uniform_real_distribution<double> dis(mMin, mMax);
-
             //Write output variables
             (*mpSeed) = dis(gen);
         }
