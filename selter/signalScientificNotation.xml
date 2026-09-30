@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject recompilable="true" libpath="" sourcecode="signalScientificNotation.hpp" typename="signalScientificNotation" displayname="Scientific Notation Input">
+            <icons>
+            <icon scale="1" path="signalScientificNotation.svg" iconrotation="" type="user"/>
+        </icons>
+    <ports>
+      <port name="x" y="0.333333" a="180" x="0"/>
+      <port name="y" y="0.666667" a="180" x="0"/>
+      <port name="out" y="0.5" a="0" x="1"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>

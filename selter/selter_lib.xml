@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsancomponentlibrary version="0.3" recompilable="true">
+  <id>9491c6c9-8c40-46ff-a9d7-deea9abf504d</id>
+  <name>selter</name>
+  <lib debug_ext="_d">selter</lib>
+  <buildflags>
+
+
+  </buildflags>
+
+
+
+  <source>selter.cpp</source>
+
+
+  <component>electricQGround.hpp</component>
+  <component>electricQGround.hpp</component>
+  <component>signalPow.hpp</component>
+  <component>signalScientificNotation.hpp</component>
+  <component>signalModulo.hpp</component>
+
+  <componentxml>electricQGround.xml</componentxml>
+  <componentxml>electricQGround.xml</componentxml>
+  <componentxml>signalPow.xml</componentxml>
+  <componentxml>signalScientificNotation.xml</componentxml>
+  <componentxml>signalModulo.xml</componentxml>
+
+
+</hopsancomponentlibrary>

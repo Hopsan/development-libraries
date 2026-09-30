@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject sourcecode="electricQGround.hpp" libpath="" typename="electricQGround" recompilable="true" displayname="Q-Type Ground">
+           <icons>
+            <icon scale="1" path="electricQGround.svg" iconrotation="" type="user"/>
+        </icons>
+    <ports>
+      <port y="0" name="Pel1" a="270" x="0.5"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>

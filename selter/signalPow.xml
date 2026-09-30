@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject displayname="Pow" libpath="" recompilable="true" typename="signalPow" sourcecode="signalPow.hpp">
+            <icons>
+            <icon scale="1" path="signalPow.svg" iconrotation="" type="user"/>
+        </icons>
+    <ports>
+      <port x="0" y="0.333333" name="x" a="180"/>
+      <port x="0" y="0.666667" name="y" a="180"/>
+      <port x="1" y="0.5" name="out" a="0"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>
+  

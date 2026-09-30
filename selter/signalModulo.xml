@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hopsanobjectappearance version="0.3">
+  <modelobject libpath="" displayname="Modulo" sourcecode="signalModulo.hpp" typename="signalModulo" recompilable="true">
+    <icons>
+            <icon scale="1" path="signalModulo.svg" iconrotation="" type="user"/>
+        </icons>
+    <ports>
+      <port y="0.333333" name="a" a="180" x="0"/>
+      <port y="0.666667" name="n" a="180" x="0"/>
+      <port y="0.5" name="r" a="0" x="1"/>
+    </ports>
+  </modelobject>
+</hopsanobjectappearance>
